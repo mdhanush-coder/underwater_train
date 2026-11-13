@@ -24,3 +24,4 @@
 - [Story narration + shot per idea](xu-story-narration-shot-rhythm.md) — from the NEXT video after BrahMos: cold open, short sentences, "but" hook, new shot per idea, multi-camera sets
 - [Next video: bullet-train undersea tunnel](next-video-bullet-train-tunnel.md) — 5-6 min, Hinglish first, TBM under Thane Creek; verify numbers first
 - [Bullet tunnel visuals workflow](bullet-tunnel-visuals-workflow.md) — voice v3 approved, shot clock, set order, real TBM counts, Blender 5.2 gotchas, user: no wasted tokens + web references
+- [Hinglish voice = aarav chips recipe](hinglish-voice-aarav-chips-recipe.md) — aarav, expressiveness low, English words pronounced English; arnav rejected

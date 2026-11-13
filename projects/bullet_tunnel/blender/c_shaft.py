@@ -183,13 +183,17 @@ def cameras(head):
 
 def run(args):
     head = build(); cameras(head)
+    if args.get('mode') == 'track':
+        from mathutils import Vector
+        result['track'] = track_screen(bpy.context.scene.camera, {f'p{i}': ((lambda v=v: head.matrix_world @ Vector(v)), 10.0, 16.0)
+            for i, v in enumerate([(0, 0, 0), (0, 4.5, 0), (4.5, 0, 0), (0, -4.5, 0), (-4.5, 0, 0), (0, 0, 2)])}, FPS); return
     sc = bpy.context.scene
-    sc.render.engine = 'BLENDER_EEVEE'; sc.eevee.taa_render_samples = 32
+    sc.render.engine = 'BLENDER_EEVEE'; sc.eevee.taa_render_samples = 32; stable_eevee(sc)
     sc.render.resolution_x, sc.render.resolution_y, sc.render.resolution_percentage = 1920, 1080, int(args.get('pct', 50))
     sc.view_settings.view_transform = 'Standard'; sc.view_settings.look = 'None'; sc.view_settings.exposure = 0.1
     if args.get('mode', 'preview') == 'preview':
-        for t in (3.4, 4.4, 5.4, 6.0):
-            sc.frame_set(int(t * FPS)); sc.render.filepath = f'{out}/c_{t:04.1f}.png'
+        for fr in (args.get('frames') or [int(t * FPS) for t in (3.4, 4.4, 5.4, 6.0)]):
+            sc.frame_set(fr); sc.render.filepath = f'{out}/c_{fr:04d}.png'
             bpy.ops.render.render(write_still=True)
     if args.get('mode') == 'anim':
         video_output(sc, out + '/set_c_lowres.mp4')

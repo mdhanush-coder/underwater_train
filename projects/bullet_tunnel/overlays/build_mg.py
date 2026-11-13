@@ -26,6 +26,7 @@ body{margin:0;background:#000}
 .hdr i{display:block;width:52px;height:5px;border-radius:3px;background:#F5B700}
 .topic{right:72px;opacity:.85}
 .b{position:absolute;visibility:hidden}
+.b.sc::before{content:'';position:absolute;inset:-34px -70px -34px -46px;z-index:-1;border-radius:40px;background:radial-gradient(closest-side,rgba(8,8,10,.82),rgba(8,8,10,.55) 60%,rgba(8,8,10,0))}
 .tagbox{display:inline-block;font:600 22px 'JetBrains Mono','Hind',monospace;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border:1.5px solid rgba(245,183,0,.85);border-radius:4px;background:rgba(10,10,12,.35);margin-bottom:12px;text-shadow:0 2px 10px rgba(0,0,0,.6)}
 .hl{font:800 52px/1.08 'Unbounded','Hind',sans-serif;letter-spacing:.005em;text-transform:uppercase;text-shadow:0 3px 22px rgba(0,0,0,.7);white-space:nowrap}
 .hl .g{color:#F5B700}
@@ -69,26 +70,40 @@ def beat_html(i, b):
     elif k == 'card':
         cx, cy = b['card']
         return f'<div class="b co" id="b{i}"><div class="card" style="left:{cx}px;top:{cy}px"><div class="t">{b["title"]}</div><div class="d">{b["desc"]}</div></div></div>'
-    return f'<div class="b" id="b{i}" style="{style}">{inner}</div>'
+    return f'<div class="b{" sc" if b.get("scrim") else ""}" id="b{i}" style="{style}">{inner}</div>'
 
 
 def build(name):
     S = SPECS[name]
     vstyle = ' style="filter:blur(14px) brightness(.45) saturate(.8);transform:scale(1.06)"' if S.get('blur') else ''
-    plates = ''.join(f'<video class="clip"{vstyle} src="assets/{a}" data-start="{st:.3f}" data-duration="{d:.3f}" data-media-start="{ms:.3f}" muted playsinline></video>'
+    PAD = 0.8   # tail: the last frame held so the next chapter can dissolve in at its true time
+    TD = round(S['dur'] + PAD, 3); last = max(st + d for _, st, d, _ in S['plates'])
+    plates = ''.join(f'<video class="clip"{vstyle} src="assets/{a}" data-start="{st:.3f}" data-duration="{d + (PAD if abs(st + d - last) < 1e-6 else 0):.3f}" data-media-start="{ms:.3f}" muted playsinline></video>'
                      for a, st, d, ms in S['plates'])
     pages = ''.join(f'<div class="mgpage" id="pg{j}" style="visibility:hidden">{p["html"]}</div>' for j, p in enumerate(S.get('pages', [])))
     beats = ''.join(beat_html(i, b) for i, b in enumerate(S['beats']))
     cards = [(i, b) for i, b in enumerate(S['beats']) if b['kind'] == 'card']
     leaders = ''.join(f'<g id="ld{i}" style="opacity:0"><polyline points=""/><circle class="dot" r="5"/><circle class="ring" r="11"/></g>' for i, _ in cards)
-    js_beats = json.dumps([{'i': i, 'k': b['kind'], 't': b['t'], 'z': b['z'], 'sub_t': b.get('sub_t'), 'anchor': b.get('anchor'), 'side': b.get('side', 'right')} for i, b in enumerate(S['beats'])])
+    js_beats = json.dumps([{'i': i, 'k': b['kind'], 't': b['t'], 'z': b['z'], 'sub_t': b.get('sub_t'), 'anchor': b.get('anchor'), 'side': b.get('side', 'right'), 'cd': b.get('cd', 2.6)} for i, b in enumerate(S['beats'])])
     js_pages = json.dumps([{'j': j, 't': p['t'], 'z': p['z']} for j, p in enumerate(S.get('pages', []))])
     page_js = '\n'.join(p.get('js', '') for p in S.get('pages', []))
+    # voice v4 (aarav): warp page time so each beat lands on its line in the new voice; plates stay real-time.
+    CH = {'hook': 1, 'ch2': 2, 'ch3': 3, 'ch4': 4, 'ch5': 5, 'ch6': 6, 'ch7': 7}
+    lt = HERE.parent / 'audio' / 'v4_line_times.json'; wp = [[0, 0]]
+    if name in CH and lt.exists():
+        ls = [l for l in json.load(open(lt)) if l['ch'] == CH[name]]
+        c0 = 0.0 if CH[name] == 1 else ls[0]['old']
+        for l in ls:
+            q = [round(l['start'] - c0, 3), round(l['old'] - c0, 3)]
+            if q[0] > wp[-1][0] and q[1] >= wp[-1][1]: wp.append(q)
+    # plate warp (smooth, retimed plates): real time -> old plate time, for leader tracks sampled in old plate time
+    pw = HERE.parent / 'audio' / 'plate_warp.json'; ws = [[0, 0], [10000, 10000]]
+    if S.get('retimed') and pw.exists(): ws = json.load(open(pw))[str(CH[name])]
     doc = f"""<!doctype html><html><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@800;900&family=Rajdhani:wght@600;700&family=JetBrains+Mono:wght@500;600&family=Inter:ital,wght@0,500;0,700;0,800;1,800&display=block" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
 <style>{CSS}</style></head><body>
-<div id="root" data-composition-id="{name}" data-start="0" data-duration="{S['dur']}" data-width="1920" data-height="1080">
+<div id="root" data-composition-id="{name}" data-start="0" data-duration="{TD}" data-width="1920" data-height="1080">
 {plates}{pages}<div id="topscrim"></div><div id="botscrim"></div><canvas id="fx" width="1920" height="1080"></canvas>
 <svg id="ld" viewBox="0 0 1920 1080">{leaders}</svg>
 <div class="hdr" id="hdr"><i></i><span>{S['chapter']}</span></div><div class="topic" id="topic">Mumbai &rarr; Ahmedabad high-speed rail</div>
@@ -99,16 +114,24 @@ window.__hf = window.__hf || {{}}; window.__hf.buildReady = window.__hf.buildRea
 window.__hf.buildReady.fonts = Promise.all([document.fonts.load('800 52px "Unbounded"'), document.fonts.load('900 104px "Unbounded"'), document.fonts.load('600 28px "Rajdhani"'),
   document.fonts.load('600 24px "JetBrains Mono"'), document.fonts.load('700 26px "Inter"'), document.fonts.load('italic 800 46px "Inter"')]);
 const BEATS = {js_beats}, PAGES = {js_pages};
-const tl = gsap.timeline({{paused: true, onUpdate: () => {{ drawFx(tl.time()); drawLeaders(); if (window.pageDraw) window.pageDraw(tl.time()); }}}});
+const WP = {json.dumps(wp)}, WS = {json.dumps(ws)}, DUR = {TD};
+function pwarp(t) {{ for (let k = 1; k < WS.length; k++) if (t <= WS[k][0]) {{ const a = WS[k-1], b = WS[k]; return a[1] + (b[1] - a[1]) * (t - a[0]) / (b[0] - a[0]); }} return WS[WS.length - 1][1]; }}
+function warp(t) {{ for (let k = 1; k < WP.length; k++) if (t <= WP[k][0]) {{ const a = WP[k-1], b = WP[k]; return a[1] + (b[1] - a[1]) * (t - a[0]) / (b[0] - a[0]); }}
+  const l = WP[WP.length - 1]; return Math.max(0, Math.min(DUR, l[1] + t - l[0])); }}
+let RT = 0;
+const tl = gsap.timeline({{paused: true, onUpdate: () => {{ drawFx(tl.time()); drawLeaders(RT); if (window.pageDraw) window.pageDraw(tl.time()); }}}});
 const prog = {{}};
-function drawLeaders() {{
+function anc(a, t) {{ if (typeof a[0] === 'number') return a; if (t <= a[0][0]) return [a[0][1], a[0][2]];
+  for (let k = 1; k < a.length; k++) if (t <= a[k][0]) {{ const f = (t - a[k-1][0]) / (a[k][0] - a[k-1][0]); return [a[k-1][1] + (a[k][1] - a[k-1][1]) * f, a[k-1][2] + (a[k][2] - a[k-1][2]) * f]; }}
+  const l = a[a.length - 1]; return [l[1], l[2]]; }}
+function drawLeaders(t) {{
   BEATS.filter(b => b.k === 'card').forEach(b => {{
     const el = document.getElementById('b' + b.i), g = document.getElementById('ld' + b.i), card = el.querySelector('.card');
     const vis = getComputedStyle(el).visibility !== 'hidden' && parseFloat(getComputedStyle(el).opacity) > 0.01;
     const cw = card.offsetWidth || 300, ch = card.offsetHeight || 80, cx = parseFloat(card.style.left), cy = parseFloat(card.style.top);
     const left = b.side === 'right';                       // card on the right: leader leaves its left edge
     const sx = left ? cx : cx + cw, sy = cy + ch / 2, ex = left ? sx - 50 : sx + 50;
-    const X = b.anchor[0] * 1920, Y = b.anchor[1] * 1080, p = prog[b.i] || 0;
+    const A = anc(b.anchor, pwarp(t || 0)), X = A[0] * 1920, Y = A[1] * 1080, p = prog[b.i] || 0;
     g.querySelector('polyline').setAttribute('points', [[sx, sy], [ex, sy], [ex + (X - ex) * p, sy + (Y - sy) * p]].map(q => q.join(',')).join(' '));
     g.querySelectorAll('circle').forEach(c => {{ c.setAttribute('cx', X); c.setAttribute('cy', Y); c.style.opacity = p > 0.97 ? 1 : 0; }});
     g.style.opacity = vis ? getComputedStyle(el).opacity : 0;
@@ -135,13 +158,15 @@ BEATS.forEach(b => {{
     tl.fromTo(early, {{autoAlpha: 0, y: 20}}, {{autoAlpha: 1, y: 0, duration: 0.5, ease: 'power3.out', stagger: 0.1}}, b.t + 0.05);
     if (late.length) {{ gsap.set(late, {{autoAlpha: 0}}); tl.fromTo(late, {{autoAlpha: 0, y: 20}}, {{autoAlpha: 1, y: 0, duration: 0.5, ease: 'power3.out'}}, b.sub_t); }}
     document.querySelectorAll(el + ' .cnt').forEach(c => {{ const o = {{v: 0}}, to = parseFloat(c.dataset.to);
-      tl.to(o, {{v: to, duration: 2.6, ease: 'power2.inOut', onUpdate: () => {{ c.textContent = (to % 1 ? o.v.toFixed(1) : Math.round(o.v).toLocaleString('en-IN')); }}}}, b.t + 0.3); }});
+      tl.to(o, {{v: to, duration: b.cd, ease: 'power2.inOut', onUpdate: () => {{ c.textContent = (to % 1 ? o.v.toFixed(1) : Math.round(o.v).toLocaleString('en-IN')); }}}}, b.t + 0.3); }});
   }}
   tl.to(el, {{autoAlpha: 0, duration: 0.4, ease: 'power2.in'}}, b.z - 0.4);
 }});
 {page_js}
 drawFx(0); drawLeaders();
-window.__timelines = {{['{name}']: tl}};
+const master = gsap.timeline({{paused: true}}), px = {{t: 0}};
+master.to(px, {{t: DUR, duration: DUR, ease: 'none', onUpdate: () => {{ RT = px.t; tl.time(warp(px.t)); drawLeaders(RT); }}}}, 0);
+window.__timelines = {{['{name}']: master}};
 </script></body></html>"""
     d = HERE / name; d.mkdir(exist_ok=True)
     (d / 'index.html').write_text(doc, encoding='utf-8')

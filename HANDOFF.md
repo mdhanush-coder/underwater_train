@@ -1,3 +1,5 @@
+> **LATEST STATE: read `projects/bullet_tunnel/SESSION_HANDOFF.md` first (2026-11-13 evening).**
+
 # Handoff: Mumbai bullet-train undersea tunnel (Hinglish, ~5:10) - state 2026-11-13
 
 Project: `projects/bullet_tunnel/`. Script `03_script.md` (83 lines, approved), timings `shots.json`, research

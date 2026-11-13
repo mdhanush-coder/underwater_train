@@ -376,3 +376,38 @@ def rigged_worker(x, y, z, yaw, seed=0, fps=30, frames=480):
     for fc in fcurves_of(arm):
         for kp in fc.keyframe_points: kp.interpolation = 'BEZIER'
     return root
+
+
+def stable_eevee(sc, shadow_lights=2):
+    """Flicker guard (found 2026-11-13: EEVEE dropped virtual shadow-map tiles frame to frame when many shadowed
+    lights overflowed the shadow pool -> shadows and blocky patches popping). Bigger pool, more samples, no jitter,
+    and cast shadows only from the strongest few lights."""
+    e = sc.eevee
+    e.taa_render_samples = max(64, e.taa_render_samples)
+    for k, v in (('shadow_pool_size', '2048'), ('shadow_resolution_scale', 1.0), ('shadow_ray_count', 2), ('shadow_step_count', 8)):
+        if hasattr(e, k):
+            try: setattr(e, k, v)
+            except Exception: pass
+    lights = [o for o in sc.objects if o.type == 'LIGHT']
+    for o in lights:
+        if hasattr(o.data, 'use_shadow_jitter'): o.data.use_shadow_jitter = False
+    ranked = sorted((o for o in lights if o.data.type != 'SUN'), key=lambda o: -o.data.energy)
+    for o in ranked[shadow_lights:]:
+        o.data.use_shadow = False
+
+
+def track_screen(cam, subjects, fps=30, step=0.2, pre=None):
+    """{name: (fn -> world Vector, t0, t1)} -> {name: [[t, x, y_from_top, depth], ...]} every `step` s (video time:
+    frame n shows t = (n-1)/fps). Used so overlay leaders follow the part instead of a single sampled point."""
+    from bpy_extras.object_utils import world_to_camera_view
+    sc = bpy.context.scene; outd = {}
+    for name, (fn, t0, t1) in subjects.items():
+        rows = []; t = t0
+        while t <= t1 + 1e-6:
+            sc.frame_set(int(round(t * fps)) + 1)
+            if pre: pre(t)
+            bpy.context.view_layer.update()
+            v = world_to_camera_view(sc, cam, fn()); rows.append([round(t, 2), round(v.x, 4), round(1 - v.y, 4), round(v.z, 1)])
+            t = round(t + step, 4)
+        outd[name] = rows
+    return outd

@@ -179,7 +179,7 @@ def run(args):
     sc = bpy.context.scene
     tot = int(T_END * FPS); sc.frame_start, sc.frame_end, sc.render.fps = 1, tot, FPS
     cam, tg = path_camera(PATH, FPS)
-    sc.render.engine = 'BLENDER_EEVEE'; sc.eevee.taa_render_samples = 32
+    sc.render.engine = 'BLENDER_EEVEE'; sc.eevee.taa_render_samples = 32; stable_eevee(sc)
     sc.render.resolution_x, sc.render.resolution_y, sc.render.resolution_percentage = 1920, 1080, int(args.get('pct', 50))
     sc.view_settings.view_transform = 'Standard'; sc.view_settings.look = 'None'; sc.view_settings.exposure = 0.1
     if args.get('mode', 'preview') == 'preview':

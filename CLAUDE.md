@@ -24,3 +24,9 @@ memory folder (`~/.claude/projects/<this-folder>/memory/`) so the user's rules p
 - Credits only in the YouTube description. Original/generated sound only (no library music).
 - 3D from an image: 3d-shapeForge only. Blender runs capped ~125/day.
 - Take references from the internet. Short reports, no long essays.
+
+## Added 2026-11-13 (evening)
+- Read `projects/bullet_tunnel/SESSION_HANDOFF.md`. Do the animation yourself; do NOT delegate to agents (user rule).
+- Voice: aarav chips recipe (v4). Callout leaders must follow dense tracks (check_cards.py all TRACK OK).
+- Every 3D plate must pass `diag/flick.py` (0 % flicker) — use `stable_eevee(sc)`.
+- Plates follow the voice via `retime.py`; uploaded inputs are referenced by their uuid file name in specs.

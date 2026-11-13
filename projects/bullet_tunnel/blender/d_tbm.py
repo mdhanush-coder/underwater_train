@@ -134,7 +134,11 @@ def run(args):
         'tail': lambda: tbm.matrix_world.translation + Vector((-80, -6.7, 2)),
         'jacks': lambda: tbm.matrix_world.translation + Vector((-8.9, -6.4, 1.0)),
         'face': lambda: tbm.matrix_world.translation + Vector((2.2, -2.0, 0)),
-    }, [7.0, 11.0, 14.0, 18.0, 23.0, 26.0, 30.0, 33.0, 40.0, 45.0])
+    }, args.get('times') or [7.0, 11.0, 14.0, 18.0, 23.0, 26.0, 30.0, 33.0, 40.0, 45.0])
+    if args.get('mode') == 'track':
+        result['track'] = track_screen(cam, {
+            'cutterhead': (lambda: head.matrix_world.translation + Vector((1.0, -4.0, 0)), 4.0, 13.0),
+            'discs': (lambda: head.matrix_world.translation + Vector((1.2, -2.5, 3.0)), 22.5, 31.5)}, FPS); return
     if args.get('mode', 'preview') == 'preview':
         for t in (0.5, 4.5, 8.0, 12.0, 19.0, 23.0, 26.5, 32.0, 36.0, 45.5):
             sc.frame_set(int(t * FPS) + 1); sc.render.filepath = f'{out}/t_{t:04.1f}.png'

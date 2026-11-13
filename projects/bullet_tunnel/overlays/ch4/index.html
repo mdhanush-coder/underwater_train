@@ -1,0 +1,103 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@800;900&family=Rajdhani:wght@600;700&family=JetBrains+Mono:wght@500;600&family=Inter:ital,wght@0,500;0,700;0,800;1,800&display=block" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+body{margin:0;background:#000}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#111;color:#FFF8E6;font-family:'Rajdhani','Hind',sans-serif}
+.clip{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.mgpage{position:absolute;left:0;top:0;width:1920px;height:1080px}
+#topscrim{position:absolute;left:0;top:0;width:1920px;height:150px;background:linear-gradient(180deg,rgba(8,8,10,.55),rgba(8,8,10,0))}
+#botscrim{position:absolute;left:0;bottom:0;width:1100px;height:420px;background:radial-gradient(120% 100% at 0% 100%,rgba(8,8,10,.55) 0%,rgba(8,8,10,0) 70%)}
+#fx{position:absolute;left:0;top:0;width:1920px;height:1080px;pointer-events:none}
+.hdr,.topic{position:absolute;top:44px;font:600 24px 'JetBrains Mono','Hind',monospace;letter-spacing:.1em;text-transform:uppercase;text-shadow:0 2px 12px rgba(0,0,0,.8)}
+.hdr{left:72px;display:flex;align-items:center;gap:16px}
+.hdr i{display:block;width:52px;height:5px;border-radius:3px;background:#F5B700}
+.topic{right:72px;opacity:.85}
+.b{position:absolute;visibility:hidden}
+.b.sc::before{content:'';position:absolute;inset:-34px -70px -34px -46px;z-index:-1;border-radius:40px;background:radial-gradient(closest-side,rgba(8,8,10,.82),rgba(8,8,10,.55) 60%,rgba(8,8,10,0))}
+.tagbox{display:inline-block;font:600 22px 'JetBrains Mono','Hind',monospace;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border:1.5px solid rgba(245,183,0,.85);border-radius:4px;background:rgba(10,10,12,.35);margin-bottom:12px;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+.hl{font:800 52px/1.08 'Unbounded','Hind',sans-serif;letter-spacing:.005em;text-transform:uppercase;text-shadow:0 3px 22px rgba(0,0,0,.7);white-space:nowrap}
+.hl .g{color:#F5B700}
+.u{text-transform:none !important}
+.hl .box{background:#F5B700;color:#121212;padding:0 12px;text-shadow:none;display:inline-block;margin:2px 0}
+.it{font:800 italic 46px/1.12 'Inter',sans-serif;letter-spacing:.005em;text-transform:uppercase;text-shadow:0 3px 22px rgba(0,0,0,.7);white-space:nowrap}
+.bar{width:110px;height:5px;border-radius:3px;background:#F5B700;margin-top:16px}
+.sub{display:flex;align-items:center;gap:10px;margin-top:12px;font:600 28px 'Rajdhani','Hind',sans-serif;letter-spacing:.08em;text-transform:uppercase;text-shadow:0 2px 14px rgba(0,0,0,.75)}
+.date{display:flex;align-items:center;gap:16px}
+.numb .lab{display:inline-block;font:600 24px 'JetBrains Mono','Hind',monospace;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border:1.5px solid rgba(255,248,230,.55);border-radius:4px;background:rgba(10,10,12,.4)}
+.numb .n{font:900 104px/1 'Unbounded','Hind',sans-serif;color:#F5B700;font-variant-numeric:tabular-nums;text-shadow:0 4px 26px rgba(0,0,0,.6);margin:10px 0}
+.numb .n small{font-size:58px;color:#FFF8E6;margin-left:8px}
+.card{position:absolute;padding:12px 18px;box-sizing:border-box;white-space:nowrap;border:2px solid #F5B700;border-radius:14px;background:rgba(10,10,12,.72);box-shadow:0 8px 28px rgba(0,0,0,.45)}
+.card .t{font:700 26px/1.15 'Inter',sans-serif;text-transform:uppercase}
+.card .t b{color:#F5B700}
+.card .d{font:500 16px/1.35 'JetBrains Mono',monospace;color:#E6E1D6;margin-top:6px;letter-spacing:.06em;text-transform:uppercase}
+svg#ld{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:visible}
+svg#ld polyline{fill:none;stroke:rgba(255,255,255,.9);stroke-width:2}
+svg#ld circle.dot{fill:#F5B700}
+svg#ld circle.ring{fill:none;stroke:#F5B700;stroke-width:2}
+.pill{display:flex;align-items:center;gap:12px;font:600 22px 'JetBrains Mono','Hind',monospace;letter-spacing:.1em;text-transform:uppercase;padding:8px 16px;border:1.5px solid rgba(127,227,255,.8);border-radius:10px;background:rgba(6,30,40,.55)}
+</style></head><body>
+<div id="root" data-composition-id="ch4" data-start="0" data-duration="55.32" data-width="1920" data-height="1080">
+<video class="clip" src="assets/ch4_slurry.mp4" data-start="0.000" data-duration="55.320" data-media-start="0.000" muted playsinline></video><div id="topscrim"></div><div id="botscrim"></div><canvas id="fx" width="1920" height="1080"></canvas>
+<svg id="ld" viewBox="0 0 1920 1080"><g id="ld2" style="opacity:0"><polyline points=""/><circle class="dot" r="5"/><circle class="ring" r="11"/></g><g id="ld10" style="opacity:0"><polyline points=""/><circle class="dot" r="5"/><circle class="ring" r="11"/></g><g id="ld12" style="opacity:0"><polyline points=""/><circle class="dot" r="5"/><circle class="ring" r="11"/></g></svg>
+<div class="hdr" id="hdr"><i></i><span>04 &mdash; The slurry</span></div><div class="topic" id="topic">Mumbai &rarr; Ahmedabad high-speed rail</div>
+<div class="b sc" id="b0" style="left:72px;top:140px"><div class="r"><span class="tagbox">The real trick</span></div><div class="r hl">Not cutting,</div><div class="r hl">but <span class="g">holding back</span></div><div class="r bar"></div></div><div class="b sc" id="b1" style="left:72px;top:140px"><div class="r"><span class="tagbox">Machine type</span></div><div class="r hl"><span class="g">Mixshield</span> TBM</div><div class="r bar"></div></div><div class="b co" id="b2"><div class="card" style="left:300px;top:120px"><div class="t"><b>Closed chamber</b></div><div class="d">Right behind<br>the cutterhead</div></div></div><div class="b sc" id="b3" style="left:72px;top:140px"><div class="r hl">Filled with</div><div class="r hl"><span class="g">bentonite slurry</span></div><div class="r bar"></div></div><div class="b" id="b4" style="left:72px;top:140px"><div class="r"><span class="tagbox">Bentonite</span></div><div class="r hl">A special <span class="g">clay</span></div><div class="r bar"></div></div><div class="b" id="b5" style="right:72px;top:140px;text-align:right"><div class="r hl">Mixed with water,</div><div class="r hl">it turns <span class="box">thick</span></div><div class="r bar"></div></div><div class="b" id="b6" style="right:72px;top:140px;text-align:right"><div class="r"><span class="tagbox">Pressure</span></div><div class="r hl">Slurry presses</div><div class="r hl">on the <span class="g">face</span></div><div class="r bar"></div></div><div class="b sc" id="b7" style="right:72px;top:110px;text-align:right"><div class="r"><span class="tagbox">Outside</span></div><div class="r hl">The sea pushes in</div><div class="r bar"></div></div><div class="b" id="b8" style="right:72px;top:140px;text-align:right"><div class="r"><span class="tagbox">Inside</span></div><div class="r hl">The slurry</div><div class="r hl">pushes <span class="g">out</span></div><div class="r bar"></div></div><div class="b" id="b9" style="left:72px;top:140px"><div class="r"><span class="tagbox">Balance</span></div><div class="r hl">Equal pressure,</div><div class="r hl">the face <span class="box">holds</span></div><div class="r bar"></div></div><div class="b co" id="b10"><div class="card" style="left:1450px;top:80px"><div class="t"><b>Air cushion</b></div><div class="d">Adjusts the pressure<br>every moment</div></div></div><div class="b" id="b11" style="left:72px;top:140px"><div class="r hl">Cut soil leaves</div><div class="r hl">through <span class="g">pipes</span></div><div class="r bar"></div></div><div class="b co" id="b12"><div class="card" style="left:300px;top:140px"><div class="t"><b>Separation plant</b></div><div class="d">Takes the soil<br>out of the slurry</div></div></div><div class="b" id="b13" style="right:72px;top:140px;text-align:right"><div class="r hl">Clean slurry</div><div class="r hl">goes <span class="g">back in</span></div><div class="r bar"></div></div><div class="b" id="b14" style="left:72px;top:140px"><div class="r"><span class="tagbox">In short</span></div><div class="r hl">A wall of</div><div class="r hl"><span class="box">liquid</span> ahead</div><div class="r bar"></div></div>
+</div>
+<script>
+window.__hf = window.__hf || {}; window.__hf.buildReady = window.__hf.buildReady || {};
+window.__hf.buildReady.fonts = Promise.all([document.fonts.load('800 52px "Unbounded"'), document.fonts.load('900 104px "Unbounded"'), document.fonts.load('600 28px "Rajdhani"'),
+  document.fonts.load('600 24px "JetBrains Mono"'), document.fonts.load('700 26px "Inter"'), document.fonts.load('italic 800 46px "Inter"')]);
+const BEATS = [{"i": 0, "k": "hl", "t": 0.3, "z": 3.4, "sub_t": null, "anchor": null, "side": "right", "cd": 2.6}, {"i": 1, "k": "hl", "t": 3.7, "z": 6.6, "sub_t": null, "anchor": null, "side": "right", "cd": 2.6}, {"i": 2, "k": "card", "t": 6.9, "z": 10.2, "sub_t": null, "anchor": [[5.0, 0.574, 0.243], [8.6, 0.613, 0.3]], "side": "left", "cd": 2.6}, {"i": 3, "k": "hl", "t": 10.6, "z": 13.2, "sub_t": null, "anchor": null, "side": "right", "cd": 2.6}, {"i": 4, "k": "hl", "t": 13.6, "z": 16.4, "sub_t": null, "anchor": null, "side": "right", "cd": 2.6}, {"i": 5, "k": "hl", "t": 16.6, "z": 19.9, "sub_t": null, "anchor": null, "side": "right", "cd": 2.6}, {"i": 6, "k": "hl", "t": 20.3, "z": 25.3, "sub_t": null, "anchor": null, "side": "right", "cd": 2.6}, {"i": 7, "k": "hl", "t": 25.8, "z": 27.5, "sub_t": null, "anchor": null, "side": "right", "cd": 2.6}, {"i": 8, "k": "hl", "t": 27.7, "z": 30.6, "sub_t": null, "anchor": null, "side": "right", "cd": 2.6}, {"i": 9, "k": "hl", "t": 31.0, "z": 34.9, "sub_t": null, "anchor": null, "side": "right", "cd": 2.6}, {"i": 10, "k": "card", "t": 35.4, "z": 38.0, "sub_t": null, "anchor": [0.513, 0.282], "side": "right", "cd": 2.6}, {"i": 11, "k": "hl", "t": 39.2, "z": 43.0, "sub_t": null, "anchor": null, "side": "right", "cd": 2.6}, {"i": 12, "k": "card", "t": 43.4, "z": 46.2, "sub_t": null, "anchor": [0.517, 0.321], "side": "left", "cd": 2.6}, {"i": 13, "k": "hl", "t": 46.6, "z": 49.7, "sub_t": null, "anchor": null, "side": "right", "cd": 2.6}, {"i": 14, "k": "hl", "t": 50.0, "z": 54.52, "sub_t": null, "anchor": null, "side": "right", "cd": 2.6}], PAGES = [];
+const WP = [[0, 0], [1.554, 0.0], [6.123, 3.542], [8.292, 6.723], [11.826, 10.425], [15.144, 13.466], [17.971, 16.487], [22.073, 20.169], [26.049, 25.715], [29.353, 27.658], [32.484, 30.901], [36.547, 35.286], [40.313, 39.047], [44.472, 43.269], [47.603, 46.45], [50.724, 49.911]], DUR = 55.32;
+function warp(t) { for (let k = 1; k < WP.length; k++) if (t <= WP[k][0]) { const a = WP[k-1], b = WP[k]; return a[1] + (b[1] - a[1]) * (t - a[0]) / (b[0] - a[0]); }
+  const l = WP[WP.length - 1]; return Math.max(0, Math.min(DUR, l[1] + t - l[0])); }
+let RT = 0;
+const tl = gsap.timeline({paused: true, onUpdate: () => { drawFx(tl.time()); drawLeaders(RT); if (window.pageDraw) window.pageDraw(tl.time()); }});
+const prog = {};
+function anc(a, t) { if (typeof a[0] === 'number') return a; if (t <= a[0][0]) return [a[0][1], a[0][2]];
+  for (let k = 1; k < a.length; k++) if (t <= a[k][0]) { const f = (t - a[k-1][0]) / (a[k][0] - a[k-1][0]); return [a[k-1][1] + (a[k][1] - a[k-1][1]) * f, a[k-1][2] + (a[k][2] - a[k-1][2]) * f]; }
+  const l = a[a.length - 1]; return [l[1], l[2]]; }
+function drawLeaders(t) {
+  BEATS.filter(b => b.k === 'card').forEach(b => {
+    const el = document.getElementById('b' + b.i), g = document.getElementById('ld' + b.i), card = el.querySelector('.card');
+    const vis = getComputedStyle(el).visibility !== 'hidden' && parseFloat(getComputedStyle(el).opacity) > 0.01;
+    const cw = card.offsetWidth || 300, ch = card.offsetHeight || 80, cx = parseFloat(card.style.left), cy = parseFloat(card.style.top);
+    const left = b.side === 'right';                       // card on the right: leader leaves its left edge
+    const sx = left ? cx : cx + cw, sy = cy + ch / 2, ex = left ? sx - 50 : sx + 50;
+    const A = anc(b.anchor, t || 0), X = A[0] * 1920, Y = A[1] * 1080, p = prog[b.i] || 0;
+    g.querySelector('polyline').setAttribute('points', [[sx, sy], [ex, sy], [ex + (X - ex) * p, sy + (Y - sy) * p]].map(q => q.join(',')).join(' '));
+    g.querySelectorAll('circle').forEach(c => { c.setAttribute('cx', X); c.setAttribute('cy', Y); c.style.opacity = p > 0.97 ? 1 : 0; });
+    g.style.opacity = vis ? getComputedStyle(el).opacity : 0;
+  });
+}
+const fx = document.getElementById('fx').getContext('2d');
+const BK = Array.from({length: 18}, () => ({x: Math.random() * 1920, y: Math.random() * 1080 * 0.7, r: 6 + Math.random() * 20, a: 0.02 + Math.random() * 0.045,
+  vx: (Math.random() - 0.5) * 6, vy: -2 - Math.random() * 5, ph: Math.random() * 6.28}));
+function drawFx(t) { fx.clearRect(0, 0, 1920, 1080); BK.forEach(b => { const x = (b.x + b.vx * t + 1920) % 1920, y = (b.y + b.vy * t + 1080) % 1080, a = b.a * (0.75 + 0.25 * Math.sin(b.ph + t * 0.6));
+  const g = fx.createRadialGradient(x, y, 0, x, y, b.r); g.addColorStop(0, `rgba(255,170,60,${a})`); g.addColorStop(1, 'rgba(255,170,60,0)'); fx.fillStyle = g; fx.beginPath(); fx.arc(x, y, b.r, 0, 6.2832); fx.fill(); }); }
+gsap.set(['#hdr', '#topic'], {autoAlpha: 0});
+tl.fromTo(['#hdr', '#topic'], {autoAlpha: 0, y: -12}, {autoAlpha: 1, y: 0, duration: 0.6, ease: 'power3.out', stagger: 0.1}, 0.2);
+PAGES.forEach(p => { const el = '#pg' + p.j; tl.set(el, {visibility: 'visible'}, p.t); tl.fromTo(el, {autoAlpha: 0}, {autoAlpha: 1, duration: 0.8, ease: 'power1.inOut'}, p.t);
+  tl.to(el, {autoAlpha: 0, duration: 0.8, ease: 'power1.inOut'}, p.z - 0.8); });
+BEATS.forEach(b => {
+  const el = '#b' + b.i; tl.set(el, {visibility: 'visible'}, b.t);
+  if (b.k === 'card') {
+    tl.fromTo(el + ' .card', {autoAlpha: 0, x: 20}, {autoAlpha: 1, x: 0, duration: 0.5, ease: 'power3.out'}, b.t);
+    const o = {p: 0}; tl.to(o, {p: 1, duration: 0.55, ease: 'power2.out', onUpdate: () => { prog[b.i] = o.p; }}, b.t + 0.25);
+  } else {
+    const rs = gsap.utils.toArray(el + ' .r');
+    const late = b.sub_t ? rs.filter(r => r.classList.contains('sub')) : [];
+    const early = rs.filter(r => !late.includes(r));
+    tl.fromTo(early, {autoAlpha: 0, y: 20}, {autoAlpha: 1, y: 0, duration: 0.5, ease: 'power3.out', stagger: 0.1}, b.t + 0.05);
+    if (late.length) { gsap.set(late, {autoAlpha: 0}); tl.fromTo(late, {autoAlpha: 0, y: 20}, {autoAlpha: 1, y: 0, duration: 0.5, ease: 'power3.out'}, b.sub_t); }
+    document.querySelectorAll(el + ' .cnt').forEach(c => { const o = {v: 0}, to = parseFloat(c.dataset.to);
+      tl.to(o, {v: to, duration: b.cd, ease: 'power2.inOut', onUpdate: () => { c.textContent = (to % 1 ? o.v.toFixed(1) : Math.round(o.v).toLocaleString('en-IN')); }}, b.t + 0.3); });
+  }
+  tl.to(el, {autoAlpha: 0, duration: 0.4, ease: 'power2.in'}, b.z - 0.4);
+});
+
+drawFx(0); drawLeaders();
+const master = gsap.timeline({paused: true}), px = {t: 0};
+master.to(px, {t: DUR, duration: DUR, ease: 'none', onUpdate: () => { RT = px.t; tl.time(warp(px.t)); drawLeaders(RT); }}, 0);
+window.__timelines = {['ch4']: master};
+</script></body></html>

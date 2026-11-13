@@ -24,3 +24,15 @@ SPECS["ch2"] = _c2
 
 from spec_ch3 import SPEC as _c3
 SPECS["ch3"] = _c3
+
+from spec_ch5 import SPEC as _c5
+SPECS["ch5"] = _c5
+
+from spec_ch7 import SPEC as _c7
+SPECS["ch7"] = _c7
+
+from spec_ch4 import SPEC as _c4
+SPECS["ch4"] = _c4
+
+from spec_ch6 import SPEC as _c6
+SPECS["ch6"] = _c6

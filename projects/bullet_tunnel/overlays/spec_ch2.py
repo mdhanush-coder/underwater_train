@@ -71,10 +71,10 @@ SPEC = dict(
     pages=[dict(t=0.0, z=17.2, html=_MAP, js=_MAP_JS), dict(t=16.8, z=31.4, html=_PROF, js=_PROF_JS), dict(t=31.0, z=46.27, html=_XS, js=_XS_JS)],
     beats=[
         dict(kind='hl', t=0.4, z=6.8, pos=(72, 820), tag='The route', lines=['BKC <span class="g">to</span> Shilphata']),
-        dict(kind='num', t=7.6, z=14.4, pos=(1848, 140), align='right', label='Tunnel length', to=21, unit='km', below='Entirely underground'),
-        dict(kind='num', t=14.8, z=17.0, pos=(1848, 140), align='right', label='Under Thane Creek', to=7, unit='km', below='Of the 21 km'),
+        dict(kind='num', t=7.6, z=14.4, pos=(1848, 140), align='right', label='Tunnel length', to=21, cd=1.3, unit='km', below='Entirely underground'),
+        dict(kind='num', t=14.8, z=17.0, pos=(1848, 140), align='right', label='Under Thane Creek', to=7, cd=1.0, unit='km', below='Of the 21 km'),
         dict(kind='hl', t=17.3, z=21.6, pos=(72, 140), tag='Depth', lines=['<span class="g">25&ndash;65 <span class="u">m</span></span> below ground']),
-        dict(kind='num', t=21.9, z=26.5, pos=(72, 140), label='Under Parsik hill', to=114, unit='m', below='Deepest point'),
+        dict(kind='num', t=21.9, z=26.5, pos=(72, 140), label='Under Parsik hill', to=114, cd=1.3, unit='m', below='Deepest point'),
         dict(kind='hl', t=26.8, z=31.0, pos=(72, 140), lines=['About <span class="box">1.5&times;</span>', 'the Qutub Minar']),
         dict(kind='hl', t=31.4, z=36.0, pos=(72, 400), tag='One tube', lines=['Single tunnel', '&Oslash; <span class="g">13.1 <span class="u">m</span></span>']),
         dict(kind='hl', t=36.3, z=40.7, pos=(72, 400), lines=['Trains in', '<span class="g">both</span> directions']),
