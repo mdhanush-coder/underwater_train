@@ -1,0 +1,26 @@
+- [BrahMos palette: charcoal-gold](brahmos-palette-charcoal-gold.md) — user rejected lime/orange night-blaze, chose charcoal-gold; cream words, gold on one word only
+- [BrahMos: no text boxes](brahmos-no-text-boxes.md) — no cards/pills behind overlay text; scrim only if needed
+- [XU visual rules: photos + handwritten](xu-visual-rules-photos-handwritten.md) — licensed real photos + Blender + handwritten engineering annotations, licence register, review before render
+- [Gaganyaan annotation look approved](gaganyaan-annotation-look-approved.md) — S4.1 template: cream DrawSVG strokes, Kalam, one gold word, graded photo
+- [XU: Blender-led, all 10 skills](xu-blender-led-all-10-skills.md) — 3D carries the film, photos are proof inserts; idea-first hook
+- [Gaganyaan voice approved](gaganyaan-voice-approved.md) — vo_hinglish_v2 (sameer, 163.5 wpm, 300.5 s) is the shot clock; G1 mid-sentence heard as जीवन
+- [On-screen text English only](onscreen-text-english-only.md) — labels/titles in English even with Hinglish narration
+- [XU sound: original only](xu-sound-original-only.md) — no unlicensed library music; generated music + synthesised sfx; no list/count gimmicks
+- [XU Hindi voice: Sameer B](xu-hindi-voice-sameer-b.md) — relaxed-friend recipe chosen over Arnav; brief + joined lines, lineGap 250
+- [EngineX film assembly via render-timeline](enginex-render-timeline-assembly.md) — OTIO + screen-blend in 3 calls; alias basenames (all outputs are motion.mp4)
+- [EngineX Blender capabilities](enginex-blender-capabilities.md) — tested headless technique matrix (sims, GN, rigging, comp, tracking); texture-paint stroke crashes, no CloudRig
+- [Hinglish: English words in Latin](hinglish-english-words-latin.md) — reactor, neutron, uranium etc. stay in English script; Hindi in Devanagari
+- [Credits: description only](xu-credits-description-only.md) — no credits/illustration tags on screen; credits go in the YouTube description
+- [3D: realistic colours](xu-3d-realistic-colours.md) — real materials for 3D (steel, concrete, blue water, heat glow); charcoal-gold only for overlays
+- [EngineX Unreal: GLB placement](enginex-unreal-glb-placement.md) — use unreal/script + import_model (scene re-centres); UE=(x,-y,z) m; flatten procedural mats
+- [Thorium: no plain backgrounds, no text over models](xu-no-plain-backgrounds-no-text-over-models.md) — blurred reactor backdrop, screen-blend plates, check label placement, MG on GPU tier
+- [EngineX: no failed runs](enginex-no-failed-runs.md) — failures (and cancels) in a row pause the engine; validate job files + params locally before submitting
+- [EngineX image-to-3D workflows](enginex-image-to-3d-workflows.md) — use 3d-shapeForge ONLY (user rule); textured GLB from one photo
+- [Chips: BrahMos presentation style](chips-brahmos-presentation-style.md) — Unbounded/Rajdhani/JetBrains Mono, full-frame plate, no handwriting
+- [Chips overlay rules v4](chips-overlay-rules-v4.md) — no step strip/icons/3D tag; callouts on the spoken word; small cards; headline goes in the darkest empty corner; softer bokeh
+- [Chips: smooth transitions](chips-smooth-transitions.md) — no hard cuts; ~1 s eased dissolves between plates and sections
+- [Chips: varied visuals, no horizon band](chips-varied-visuals-no-horizon-band.md) — mix MG scenes with plates, black table band fix, keep MG labels clear
+- [EngineX media gotchas](enginex-media-gotchas.md) — MG asset names are uuids, sound: ids failed (use listen URLs), project-zip trick
+- [Story narration + shot per idea](xu-story-narration-shot-rhythm.md) — from the NEXT video after BrahMos: cold open, short sentences, "but" hook, new shot per idea, multi-camera sets
+- [Next video: bullet-train undersea tunnel](next-video-bullet-train-tunnel.md) — 5-6 min, Hinglish first, TBM under Thane Creek; verify numbers first
+- [Bullet tunnel visuals workflow](bullet-tunnel-visuals-workflow.md) — voice v3 approved, shot clock, set order, real TBM counts, Blender 5.2 gotchas, user: no wasted tokens + web references

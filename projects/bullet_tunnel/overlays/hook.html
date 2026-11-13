@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+  /* Hook overlay (0-37.4 s). Text on BLACK, screen-blended over the plates. Charcoal-gold: cream words, gold on ONE item per frame.
+     Fonts as the approved BrahMos overlays: Unbounded (display), Rajdhani (lines), JetBrains Mono (HUD). English only.
+     No boxes, no handwriting. Everything lives in clear areas: left column over sky/ground or the right column beside the model. */
+  :root { --night:#000; --gold:#F5B700; --cream:#FFF8E6; --cream60:rgba(255,248,230,0.62); }
+  body { margin:0; }
+  #root { position:relative; width:1920px; height:1080px; overflow:hidden; background:var(--night); color:var(--cream); font-family:'Rajdhani','Hind',sans-serif; }
+  .abs { position:absolute; opacity:0; }
+  .hud { font:500 30px 'JetBrains Mono','Hind',monospace; letter-spacing:0.14em; }
+  .disp { font:800 112px/1 'Unbounded','Hind',sans-serif; letter-spacing:-0.01em; font-variant-numeric:tabular-nums; }
+  .line { font:600 56px/1.08 'Rajdhani','Hind',sans-serif; }
+  .gold { color:var(--gold); }
+  .rule { position:absolute; height:3px; background:var(--cream); transform-origin:left center; transform:scaleX(0); opacity:0.8; }
+  .vrule { position:absolute; width:3px; background:var(--cream); transform-origin:top center; transform:scaleY(0); opacity:0.8; }
+  /* date lockup + place */
+  #date { left:136px; top:150px; }
+  #place { left:136px; top:292px; }
+  /* shaft depth ruler (right edge): ticks every 8 m + running number */
+  #ruler { left:1560px; top:140px; width:224px; height:800px; }
+  #ruler .tick { position:absolute; right:0; height:3px; background:var(--cream); opacity:0.7; }
+  #depth { right:136px; top:960px; }
+  #depthLabel { right:136px; top:90px; text-align:right; }
+  /* cutterhead callouts: right column, thin leaders */
+  .callout { right:136px; text-align:right; }
+  .callout .big { font:800 72px/1 'Unbounded','Hind',sans-serif; }
+  .callout .cap { font:600 40px/1.1 'Rajdhani','Hind',sans-serif; opacity:0.92; margin-top:10px; }
+  /* creek + chips */
+  #creek { left:136px; top:880px; }
+  #chip { left:136px; top:856px; }
+  #chip .l1 { font:500 30px 'JetBrains Mono','Hind',monospace; letter-spacing:0.14em; opacity:0.85; }
+  #chip .l2 { font:800 62px/1.05 'Unbounded','Hind',sans-serif; margin-top:14px; }
+  #ill { left:136px; top:72px; }
+  #q { left:136px; top:790px; }
+  #q .a { font:800 76px/1.08 'Unbounded','Hind',sans-serif; }
+  #sea { right:136px; top:96px; text-align:right; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="hook" data-start="0" data-duration="37.4" data-width="1920" data-height="1080">
+  <!-- C1: date + place (lines 1-2) -->
+  <div class="abs hud" id="eyebrow" style="left:136px;top:96px">THE DAY IT STARTED</div>
+  <div class="abs disp" id="date">5 <span class="gold">JULY</span> 2026</div>
+  <div class="abs hud" id="place">VIKHROLI  ·  MUMBAI</div>
+  <div class="rule" id="placeRule" style="left:136px;top:276px;width:520px"></div>
+  <!-- C3-4: shaft depth ruler -->
+  <div class="abs hud" id="depthLabel">SHAFT DEPTH</div>
+  <div class="vrule" id="vr" style="right:140px;top:150px;height:760px"></div>
+  <div class="abs" id="ruler"></div>
+  <div class="abs disp" id="depth"><span id="dnum">0</span> <span class="gold" style="font-size:64px">m</span></div>
+  <!-- C5: cutterhead callouts -->
+  <div class="abs callout" id="cut1" style="top:150px"><div class="hud" style="margin-bottom:14px">CUTTERHEAD</div><div class="big">Ø <span class="gold">13.6</span> m</div><div class="cap">largest ever used for a rail tunnel in India</div></div>
+  <div class="abs callout" id="cut2" style="top:470px"><div class="big"><span class="gold">84</span> DISC CUTTERS</div><div class="cap">rolling steel discs that crush rock</div></div>
+  <div class="abs callout" id="cut3" style="top:760px"><div class="big"><span class="gold">350</span> t</div><div class="cap">the cutterhead alone</div></div>
+  <!-- AB: creek, tag, chip, question -->
+  <div class="abs hud" id="creek">THANE CREEK  ·  MUMBAI</div>
+  <div class="abs" id="chip"><div class="l1">SCHEMATIC CUTAWAY  ·  ILLUSTRATIVE</div><div class="l2">INDIA'S <span class="gold">FIRST</span><br>UNDERSEA RAIL TUNNEL</div></div>
+  <div class="abs" id="q"><div class="hud" style="margin-bottom:18px">THE QUESTION</div><div class="a">WHY DOESN'T THE <span class="gold">WATER</span><br>COME IN?</div></div>
+  <div class="abs hud" id="sea">SEA PRESSURE ON THE TUNNEL</div>
+</div>
+<script>
+  var T = gsap.timeline({ paused:true });
+  window.__tl = T;
+  function rise(sel, t, d){ T.fromTo(sel, {autoAlpha:0, y:24}, {autoAlpha:1, y:0, duration:0.5, ease:'power3.out'}, t); if (d) T.to(sel, {autoAlpha:0, duration:0.4, ease:'power2.in'}, t + d); }
+  function draw(sel, t, d){ T.to(sel, {scaleX:1, duration:0.7, ease:'power3.out'}, t); if (d) T.to(sel, {opacity:0, duration:0.4}, t + d); }
+  // ruler ticks
+  var r = document.getElementById('ruler'); for (var i = 0; i <= 14; i++) { var k = document.createElement('div'); k.className = 'tick'; k.style.top = (i*53) + 'px'; k.style.width = (i%2 ? 40 : 80) + 'px'; r.appendChild(k); }
+  // line 1-2 (0.1 - 4.8)
+  rise('#eyebrow', 0.4, 2.4); rise('#date', 0.5, 2.4); rise('#place', 3.1, 2.0); draw('#placeRule', 3.0, 2.2);
+  // shaft depth ruler: counts 0 -> 56 as the camera drops (6.1 -> 10.1 s); depth number is read by the hook line "fifty-six metre"
+  T.to('#vr', {scaleY:1, duration:0.8, ease:'power3.out'}, 6.0);
+  rise('#depthLabel', 6.1, 5.2); rise('#ruler', 6.1, 5.2); rise('#depth', 6.3, 5.0);
+  var o = {v:0}; T.to(o, {v:56, duration:3.6, ease:'power2.inOut', onUpdate:function(){ document.getElementById('dnum').textContent = Math.round(o.v); }}, 6.5);
+  T.to('#vr', {opacity:0, duration:0.4}, 11.2);
+  // cutterhead callouts (line 5, 10.2 - 14.5)
+  rise('#cut1', 11.7, 2.4); rise('#cut2', 12.6, 1.9);  rise('#cut3', 13.4, 1.4);
+  // creek + question (global time = local + 14.6)
+  rise('#creek', 15.2, 3.4);
+  rise('#chip', 26.2, 4.3);
+  rise('#q', 32.6, 4.4); rise('#sea', 32.4, 4.6);
+  // black ground for the screen blend; final frame guard
+  T.to({}, {duration:0.01}, 37.39);
+  // hf-seek: the renderer seeks to a time t
+  window.hfSeek = function(t){ T.time(t, false); };
+</script>
+</body>
+</html>

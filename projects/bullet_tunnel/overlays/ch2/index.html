@@ -1,0 +1,151 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@800;900&family=Rajdhani:wght@600;700&family=JetBrains+Mono:wght@500;600&family=Inter:ital,wght@0,500;0,700;0,800;1,800&display=block" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+body{margin:0;background:#000}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#111;color:#FFF8E6;font-family:'Rajdhani','Hind',sans-serif}
+.clip{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.mgpage{position:absolute;left:0;top:0;width:1920px;height:1080px}
+#topscrim{position:absolute;left:0;top:0;width:1920px;height:150px;background:linear-gradient(180deg,rgba(8,8,10,.55),rgba(8,8,10,0))}
+#botscrim{position:absolute;left:0;bottom:0;width:1100px;height:420px;background:radial-gradient(120% 100% at 0% 100%,rgba(8,8,10,.55) 0%,rgba(8,8,10,0) 70%)}
+#fx{position:absolute;left:0;top:0;width:1920px;height:1080px;pointer-events:none}
+.hdr,.topic{position:absolute;top:44px;font:600 24px 'JetBrains Mono','Hind',monospace;letter-spacing:.1em;text-transform:uppercase;text-shadow:0 2px 12px rgba(0,0,0,.8)}
+.hdr{left:72px;display:flex;align-items:center;gap:16px}
+.hdr i{display:block;width:52px;height:5px;border-radius:3px;background:#F5B700}
+.topic{right:72px;opacity:.85}
+.b{position:absolute;visibility:hidden}
+.tagbox{display:inline-block;font:600 22px 'JetBrains Mono','Hind',monospace;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border:1.5px solid rgba(245,183,0,.85);border-radius:4px;background:rgba(10,10,12,.35);margin-bottom:12px;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+.hl{font:800 52px/1.08 'Unbounded','Hind',sans-serif;letter-spacing:.005em;text-transform:uppercase;text-shadow:0 3px 22px rgba(0,0,0,.7);white-space:nowrap}
+.hl .g{color:#F5B700}
+.u{text-transform:none !important}
+.hl .box{background:#F5B700;color:#121212;padding:0 12px;text-shadow:none;display:inline-block;margin:2px 0}
+.it{font:800 italic 46px/1.12 'Inter',sans-serif;letter-spacing:.005em;text-transform:uppercase;text-shadow:0 3px 22px rgba(0,0,0,.7);white-space:nowrap}
+.bar{width:110px;height:5px;border-radius:3px;background:#F5B700;margin-top:16px}
+.sub{display:flex;align-items:center;gap:10px;margin-top:12px;font:600 28px 'Rajdhani','Hind',sans-serif;letter-spacing:.08em;text-transform:uppercase;text-shadow:0 2px 14px rgba(0,0,0,.75)}
+.date{display:flex;align-items:center;gap:16px}
+.numb .lab{display:inline-block;font:600 24px 'JetBrains Mono','Hind',monospace;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border:1.5px solid rgba(255,248,230,.55);border-radius:4px;background:rgba(10,10,12,.4)}
+.numb .n{font:900 104px/1 'Unbounded','Hind',sans-serif;color:#F5B700;font-variant-numeric:tabular-nums;text-shadow:0 4px 26px rgba(0,0,0,.6);margin:10px 0}
+.numb .n small{font-size:58px;color:#FFF8E6;margin-left:8px}
+.card{position:absolute;padding:12px 18px;box-sizing:border-box;white-space:nowrap;border:2px solid #F5B700;border-radius:14px;background:rgba(10,10,12,.72);box-shadow:0 8px 28px rgba(0,0,0,.45)}
+.card .t{font:700 26px/1.15 'Inter',sans-serif;text-transform:uppercase}
+.card .t b{color:#F5B700}
+.card .d{font:500 16px/1.35 'JetBrains Mono',monospace;color:#E6E1D6;margin-top:6px;letter-spacing:.06em;text-transform:uppercase}
+svg#ld{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:visible}
+svg#ld polyline{fill:none;stroke:rgba(255,255,255,.9);stroke-width:2}
+svg#ld circle.dot{fill:#F5B700}
+svg#ld circle.ring{fill:none;stroke:#F5B700;stroke-width:2}
+.pill{display:flex;align-items:center;gap:12px;font:600 22px 'JetBrains Mono','Hind',monospace;letter-spacing:.1em;text-transform:uppercase;padding:8px 16px;border:1.5px solid rgba(127,227,255,.8);border-radius:10px;background:rgba(6,30,40,.55)}
+</style></head><body>
+<div id="root" data-composition-id="ch2" data-start="0" data-duration="46.27" data-width="1920" data-height="1080">
+<video class="clip" style="filter:blur(14px) brightness(.45) saturate(.8);transform:scale(1.06)" src="assets/script.mp4" data-start="0.000" data-duration="12.500" data-media-start="0.000" muted playsinline></video><video class="clip" style="filter:blur(14px) brightness(.45) saturate(.8);transform:scale(1.06)" src="assets/script.mp4" data-start="12.500" data-duration="12.500" data-media-start="0.000" muted playsinline></video><video class="clip" style="filter:blur(14px) brightness(.45) saturate(.8);transform:scale(1.06)" src="assets/script.mp4" data-start="25.000" data-duration="12.500" data-media-start="0.000" muted playsinline></video><video class="clip" style="filter:blur(14px) brightness(.45) saturate(.8);transform:scale(1.06)" src="assets/script.mp4" data-start="37.500" data-duration="12.500" data-media-start="0.000" muted playsinline></video><div class="mgpage" id="pg0" style="visibility:hidden"><div style="position:absolute;inset:0;background:radial-gradient(90% 80% at 50% 45%,rgba(16,18,22,.72),rgba(8,8,10,.92))"></div>
+<svg viewBox="0 0 1920 1080" width="1920" height="1080" style="position:absolute;left:0;top:0">
+ <defs><pattern id="dg" width="36" height="36" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.3" fill="rgba(255,248,230,.07)"/></pattern></defs>
+ <rect width="1920" height="1080" fill="url(#dg)"/>
+ <path id="m_creek" d="M880 120 C 900 330, 860 520, 905 700 S 900 980, 930 1080 L 1240 1080 C 1215 900, 1255 700, 1222 520 S 1250 260, 1235 120 Z" fill="rgba(60,140,170,.22)" stroke="rgba(127,227,255,.45)" stroke-width="2" opacity="0"/>
+ <text id="m_creekl" x="1060" y="300" fill="#7FE3FF" font-family="Inter" font-style="italic" font-weight="800" font-size="26" letter-spacing=".12em" text-anchor="middle" opacity="0">THANE CREEK</text>
+ <path id="m_route" d="M420 600 C 560 590, 650 560, 730 560 S 1000 520, 1240 515 S 1420 500, 1500 470" fill="none" stroke="#F5B700" stroke-width="7" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1"/>
+ <path id="m_creekseg" d="M880 548 C 980 530, 1100 520, 1240 515" fill="none" stroke="#FFF8E6" stroke-width="11" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1"/>
+ <g font-family="JetBrains Mono" font-weight="600" font-size="22" letter-spacing=".1em" fill="#FFF8E6">
+  <g id="d_bkc" opacity="0"><circle cx="420" cy="600" r="10" fill="#F5B700"/><circle cx="420" cy="600" r="20" fill="none" stroke="#F5B700" stroke-width="2"/><text x="420" y="650" text-anchor="middle">BKC</text></g>
+  <g id="d_vik" opacity="0"><circle cx="730" cy="560" r="8" fill="#FFF8E6"/><text x="730" y="520" text-anchor="middle">VIKHROLI</text></g>
+  <g id="d_gha" opacity="0"><circle cx="1240" cy="515" r="8" fill="#FFF8E6"/><text x="1240" y="575" text-anchor="middle">GHANSOLI</text></g>
+  <g id="d_shi" opacity="0"><circle cx="1500" cy="470" r="10" fill="#F5B700"/><circle cx="1500" cy="470" r="20" fill="none" stroke="#F5B700" stroke-width="2"/><text x="1500" y="425" text-anchor="middle">SHILPHATA</text></g>
+ </g>
+ <text id="m_note" x="1848" y="1030" fill="rgba(255,248,230,.6)" font-family="JetBrains Mono" font-size="18" letter-spacing=".12em" text-anchor="end" opacity="0">SCHEMATIC MAP &#183; NOT TO SCALE</text>
+</svg></div><div class="mgpage" id="pg1" style="visibility:hidden"><div style="position:absolute;inset:0;background:radial-gradient(90% 80% at 50% 45%,rgba(16,18,22,.78),rgba(8,8,10,.94))"></div>
+<svg viewBox="0 0 1920 1080" width="1920" height="1080" style="position:absolute;left:0;top:0" font-family="JetBrains Mono" font-weight="600" letter-spacing=".1em">
+ <path d="M300 380 L 677 380 C 690 410, 1100 410, 1117 380 L 1240 380 C 1300 300, 1360 250, 1400 250 C 1440 250, 1500 300, 1560 380 L 1620 380 L 1620 760 L 300 760 Z" fill="rgba(120,92,62,.35)" stroke="rgba(255,248,230,.55)" stroke-width="2"/>
+ <path d="M677 380 C 690 410, 1100 410, 1117 380 Z" fill="rgba(60,140,170,.45)"/>
+ <rect id="p_band" x="300" y="435" width="1320" height="88" fill="rgba(245,183,0,.12)" stroke="rgba(245,183,0,.5)" stroke-dasharray="8 8" opacity="0"/>
+ <path id="p_tun" d="M300 470 C 420 470, 560 445, 700 450 S 1000 470, 1150 470 S 1340 500, 1400 501 S 1560 470, 1620 455" fill="none" stroke="#F5B700" stroke-width="8" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1"/>
+ <text x="300" y="800" fill="#FFF8E6" font-size="20">BKC</text><text x="1620" y="800" fill="#FFF8E6" font-size="20" text-anchor="end">SHILPHATA</text>
+ <text x="1400" y="232" fill="#FFF8E6" font-size="20" text-anchor="middle">PARSIK HILL</text>
+ <g id="p_114" opacity="0"><path d="M1400 250 V 501" stroke="#FFF8E6" stroke-width="2" stroke-dasharray="6 6"/><circle cx="1400" cy="501" r="8" fill="#F5B700"/></g>
+ <g id="p_qutub" opacity="0"><path d="M1500 501 L 1512 341 L 1520 341 L 1532 501 Z" fill="rgba(255,248,230,.85)"/><text x="1516" y="325" fill="#FFF8E6" font-size="18" text-anchor="middle">QUTUB MINAR 72.5 m</text></g>
+ <text x="1848" y="1030" fill="rgba(255,248,230,.6)" font-size="18" text-anchor="end">DEPTH PROFILE &#183; ILLUSTRATIVE</text>
+</svg></div><div class="mgpage" id="pg2" style="visibility:hidden"><div style="position:absolute;inset:0;background:radial-gradient(90% 80% at 55% 50%,rgba(16,18,22,.8),rgba(8,8,10,.95))"></div>
+<svg viewBox="0 0 1920 1080" width="1920" height="1080" style="position:absolute;left:0;top:0" font-family="JetBrains Mono" font-weight="600" letter-spacing=".1em">
+ <circle id="x_ring" cx="1260" cy="540" r="243" fill="rgba(90,90,96,.25)" stroke="rgba(255,248,230,.35)" stroke-width="20" opacity="0"/>
+ <circle id="x_c" cx="1260" cy="540" r="223" fill="none" stroke="#F5B700" stroke-width="5" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1" transform="rotate(-90 1260 540)"/>
+ <g id="x_dim" opacity="0"><path d="M1037 540 H 1483" stroke="#FFF8E6" stroke-width="2"/><path d="M1037 525 V 555 M1483 525 V 555" stroke="#FFF8E6" stroke-width="2"/>
+  <text x="1260" y="525" fill="#F5B700" font-size="30" text-anchor="middle">13.1 m</text></g>
+ <rect id="x_floor" x="1060" y="662" width="400" height="18" fill="rgba(255,248,230,.5)" opacity="0"/>
+ <g id="x_tr1" opacity="0"><rect x="1124" y="536" width="112" height="126" rx="22" fill="rgba(127,227,255,.25)" stroke="#7FE3FF" stroke-width="3"/></g>
+ <g id="x_tr2" opacity="0"><rect x="1284" y="536" width="112" height="126" rx="22" fill="rgba(127,227,255,.25)" stroke="#7FE3FF" stroke-width="3"/></g>
+ <text x="1848" y="1030" fill="rgba(255,248,230,.6)" font-size="18" text-anchor="end">CROSS-SECTION &#183; ILLUSTRATIVE</text>
+</svg></div><div id="topscrim"></div><div id="botscrim"></div><canvas id="fx" width="1920" height="1080"></canvas>
+<svg id="ld" viewBox="0 0 1920 1080"></svg>
+<div class="hdr" id="hdr"><i></i><span>02 &mdash; The route</span></div><div class="topic" id="topic">Mumbai &rarr; Ahmedabad high-speed rail</div>
+<div class="b" id="b0" style="left:72px;top:820px"><div class="r"><span class="tagbox">The route</span></div><div class="r hl">BKC <span class="g">to</span> Shilphata</div><div class="r bar"></div></div><div class="b" id="b1" style="right:72px;top:140px;text-align:right"><div class="r numb"><span class="lab">Tunnel length</span></div><div class="r numb"><div class="n"><span class="cnt" data-to="21">0</span><small>km</small></div></div><div class="r numb"><span class="lab">Entirely underground</span></div></div><div class="b" id="b2" style="right:72px;top:140px;text-align:right"><div class="r numb"><span class="lab">Under Thane Creek</span></div><div class="r numb"><div class="n"><span class="cnt" data-to="7">0</span><small>km</small></div></div><div class="r numb"><span class="lab">Of the 21 km</span></div></div><div class="b" id="b3" style="left:72px;top:140px"><div class="r"><span class="tagbox">Depth</span></div><div class="r hl"><span class="g">25&ndash;65 <span class="u">m</span></span> below ground</div><div class="r bar"></div></div><div class="b" id="b4" style="left:72px;top:140px"><div class="r numb"><span class="lab">Under Parsik hill</span></div><div class="r numb"><div class="n"><span class="cnt" data-to="114">0</span><small>m</small></div></div><div class="r numb"><span class="lab">Deepest point</span></div></div><div class="b" id="b5" style="left:72px;top:140px"><div class="r hl">About <span class="box">1.5&times;</span></div><div class="r hl">the Qutub Minar</div><div class="r bar"></div></div><div class="b" id="b6" style="left:72px;top:400px"><div class="r"><span class="tagbox">One tube</span></div><div class="r hl">Single tunnel</div><div class="r hl">&Oslash; <span class="g">13.1 <span class="u">m</span></span></div><div class="r bar"></div></div><div class="b" id="b7" style="left:72px;top:400px"><div class="r hl">Trains in</div><div class="r hl"><span class="g">both</span> directions</div><div class="r bar"></div></div><div class="b" id="b8" style="left:72px;top:400px"><div class="r"><span class="tagbox">So</span></div><div class="r hl">How do you dig this</div><div class="r hl"><span class="box">under the sea?</span></div><div class="r bar"></div></div>
+</div>
+<script>
+window.__hf = window.__hf || {}; window.__hf.buildReady = window.__hf.buildReady || {};
+window.__hf.buildReady.fonts = Promise.all([document.fonts.load('800 52px "Unbounded"'), document.fonts.load('900 104px "Unbounded"'), document.fonts.load('600 28px "Rajdhani"'),
+  document.fonts.load('600 24px "JetBrains Mono"'), document.fonts.load('700 26px "Inter"'), document.fonts.load('italic 800 46px "Inter"')]);
+const BEATS = [{"i": 0, "k": "hl", "t": 0.4, "z": 6.8, "sub_t": null, "anchor": null, "side": "right"}, {"i": 1, "k": "num", "t": 7.6, "z": 14.4, "sub_t": null, "anchor": null, "side": "right"}, {"i": 2, "k": "num", "t": 14.8, "z": 17.0, "sub_t": null, "anchor": null, "side": "right"}, {"i": 3, "k": "hl", "t": 17.3, "z": 21.6, "sub_t": null, "anchor": null, "side": "right"}, {"i": 4, "k": "num", "t": 21.9, "z": 26.5, "sub_t": null, "anchor": null, "side": "right"}, {"i": 5, "k": "hl", "t": 26.8, "z": 31.0, "sub_t": null, "anchor": null, "side": "right"}, {"i": 6, "k": "hl", "t": 31.4, "z": 36.0, "sub_t": null, "anchor": null, "side": "right"}, {"i": 7, "k": "hl", "t": 36.3, "z": 40.7, "sub_t": null, "anchor": null, "side": "right"}, {"i": 8, "k": "hl", "t": 41.1, "z": 46.27, "sub_t": null, "anchor": null, "side": "right"}], PAGES = [{"j": 0, "t": 0.0, "z": 17.2}, {"j": 1, "t": 16.8, "z": 31.4}, {"j": 2, "t": 31.0, "z": 46.27}];
+const tl = gsap.timeline({paused: true, onUpdate: () => { drawFx(tl.time()); drawLeaders(); if (window.pageDraw) window.pageDraw(tl.time()); }});
+const prog = {};
+function drawLeaders() {
+  BEATS.filter(b => b.k === 'card').forEach(b => {
+    const el = document.getElementById('b' + b.i), g = document.getElementById('ld' + b.i), card = el.querySelector('.card');
+    const vis = getComputedStyle(el).visibility !== 'hidden' && parseFloat(getComputedStyle(el).opacity) > 0.01;
+    const cw = card.offsetWidth || 300, ch = card.offsetHeight || 80, cx = parseFloat(card.style.left), cy = parseFloat(card.style.top);
+    const left = b.side === 'right';                       // card on the right: leader leaves its left edge
+    const sx = left ? cx : cx + cw, sy = cy + ch / 2, ex = left ? sx - 50 : sx + 50;
+    const X = b.anchor[0] * 1920, Y = b.anchor[1] * 1080, p = prog[b.i] || 0;
+    g.querySelector('polyline').setAttribute('points', [[sx, sy], [ex, sy], [ex + (X - ex) * p, sy + (Y - sy) * p]].map(q => q.join(',')).join(' '));
+    g.querySelectorAll('circle').forEach(c => { c.setAttribute('cx', X); c.setAttribute('cy', Y); c.style.opacity = p > 0.97 ? 1 : 0; });
+    g.style.opacity = vis ? getComputedStyle(el).opacity : 0;
+  });
+}
+const fx = document.getElementById('fx').getContext('2d');
+const BK = Array.from({length: 18}, () => ({x: Math.random() * 1920, y: Math.random() * 1080 * 0.7, r: 6 + Math.random() * 20, a: 0.02 + Math.random() * 0.045,
+  vx: (Math.random() - 0.5) * 6, vy: -2 - Math.random() * 5, ph: Math.random() * 6.28}));
+function drawFx(t) { fx.clearRect(0, 0, 1920, 1080); BK.forEach(b => { const x = (b.x + b.vx * t + 1920) % 1920, y = (b.y + b.vy * t + 1080) % 1080, a = b.a * (0.75 + 0.25 * Math.sin(b.ph + t * 0.6));
+  const g = fx.createRadialGradient(x, y, 0, x, y, b.r); g.addColorStop(0, `rgba(255,170,60,${a})`); g.addColorStop(1, 'rgba(255,170,60,0)'); fx.fillStyle = g; fx.beginPath(); fx.arc(x, y, b.r, 0, 6.2832); fx.fill(); }); }
+gsap.set(['#hdr', '#topic'], {autoAlpha: 0});
+tl.fromTo(['#hdr', '#topic'], {autoAlpha: 0, y: -12}, {autoAlpha: 1, y: 0, duration: 0.6, ease: 'power3.out', stagger: 0.1}, 0.2);
+PAGES.forEach(p => { const el = '#pg' + p.j; tl.set(el, {visibility: 'visible'}, p.t); tl.fromTo(el, {autoAlpha: 0}, {autoAlpha: 1, duration: 0.8, ease: 'power1.inOut'}, p.t);
+  tl.to(el, {autoAlpha: 0, duration: 0.8, ease: 'power1.inOut'}, p.z - 0.8); });
+BEATS.forEach(b => {
+  const el = '#b' + b.i; tl.set(el, {visibility: 'visible'}, b.t);
+  if (b.k === 'card') {
+    tl.fromTo(el + ' .card', {autoAlpha: 0, x: 20}, {autoAlpha: 1, x: 0, duration: 0.5, ease: 'power3.out'}, b.t);
+    const o = {p: 0}; tl.to(o, {p: 1, duration: 0.55, ease: 'power2.out', onUpdate: () => { prog[b.i] = o.p; }}, b.t + 0.25);
+  } else {
+    const rs = gsap.utils.toArray(el + ' .r');
+    const late = b.sub_t ? rs.filter(r => r.classList.contains('sub')) : [];
+    const early = rs.filter(r => !late.includes(r));
+    tl.fromTo(early, {autoAlpha: 0, y: 20}, {autoAlpha: 1, y: 0, duration: 0.5, ease: 'power3.out', stagger: 0.1}, b.t + 0.05);
+    if (late.length) { gsap.set(late, {autoAlpha: 0}); tl.fromTo(late, {autoAlpha: 0, y: 20}, {autoAlpha: 1, y: 0, duration: 0.5, ease: 'power3.out'}, b.sub_t); }
+    document.querySelectorAll(el + ' .cnt').forEach(c => { const o = {v: 0}, to = parseFloat(c.dataset.to);
+      tl.to(o, {v: to, duration: 2.6, ease: 'power2.inOut', onUpdate: () => { c.textContent = (to % 1 ? o.v.toFixed(1) : Math.round(o.v).toLocaleString('en-IN')); }}, b.t + 0.3); });
+  }
+  tl.to(el, {autoAlpha: 0, duration: 0.4, ease: 'power2.in'}, b.z - 0.4);
+});
+
+tl.to('#d_bkc', {opacity: 1, duration: .5}, 0.6);
+tl.to('#m_route', {strokeDashoffset: 0, duration: 4.2, ease: 'power2.inOut'}, 1.2);
+tl.to('#d_vik', {opacity: 1, duration: .4}, 2.6); tl.to('#d_gha', {opacity: 1, duration: .4}, 4.4); tl.to('#d_shi', {opacity: 1, duration: .5}, 5.2);
+tl.to('#m_note', {opacity: 1, duration: .5}, 1.0);
+tl.to(['#m_creek', '#m_creekl'], {opacity: 1, duration: .8}, 14.4);
+tl.to('#m_creekseg', {strokeDashoffset: 0, duration: 1.4, ease: 'power2.inOut'}, 14.8);
+
+
+tl.to('#p_tun', {strokeDashoffset: 0, duration: 3.0, ease: 'power2.inOut'}, 17.2);
+tl.to('#p_band', {opacity: 1, duration: .6}, 18.0);
+tl.to('#p_114', {opacity: 1, duration: .6}, 22.2);
+tl.fromTo('#p_qutub', {opacity: 0, y: -30}, {opacity: 1, y: 0, duration: .7, ease: 'power3.out'}, 26.9);
+
+
+tl.to('#x_c', {strokeDashoffset: 0, duration: 1.4, ease: 'power2.inOut'}, 31.4);
+tl.to('#x_ring', {opacity: 1, duration: .8}, 32.2);
+tl.to('#x_dim', {opacity: 1, duration: .5}, 33.7);
+tl.to('#x_floor', {opacity: 1, duration: .4}, 36.2);
+tl.fromTo('#x_tr1', {opacity: 0, x: 60}, {opacity: 1, x: 0, duration: .8, ease: 'power3.out'}, 36.5);
+tl.fromTo('#x_tr2', {opacity: 0, x: -60}, {opacity: 1, x: 0, duration: .8, ease: 'power3.out'}, 37.0);
+tl.fromTo('#pg2 svg', {scale: 1}, {scale: 1.8, transformOrigin: '1260px 540px', duration: 4.4, ease: 'power2.in'}, 41.2);
+
+drawFx(0); drawLeaders();
+window.__timelines = {['ch2']: tl};
+</script></body></html>

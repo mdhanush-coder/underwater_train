@@ -1,0 +1,666 @@
+[
+ {
+  "ch": 1,
+  "text": "आज है fifth July, two thousand twenty-six।",
+  "meta": "vis=black opens to dawn light, date types on; number=5 JULY 2026",
+  "start": 0.051,
+  "end": 2.414,
+  "n": 1
+ },
+ {
+  "ch": 1,
+  "text": "जगह है मुंबई का विक्रोली।",
+  "meta": "vis=dawn aerial, cranes around a deep round shaft; label=VIKHROLI, MUMBAI",
+  "start": 2.974,
+  "end": 4.796,
+  "n": 2
+ },
+ {
+  "ch": 1,
+  "text": "यहाँ ज़मीन में, एक बहुत गहरा गड्ढा है।",
+  "meta": "vis=camera drifts over the shaft edge, looking down",
+  "start": 5.257,
+  "end": 7.88,
+  "n": 3
+ },
+ {
+  "ch": 1,
+  "text": "करीब fifty-six metre गहरा।",
+  "meta": "vis=camera sinks down the shaft wall; number=56 m",
+  "start": 8.04,
+  "end": 9.842,
+  "n": 4
+ },
+ {
+  "ch": 1,
+  "text": "और उसके नीचे, एक बहुत बड़ी machine धीरे से घूमने लगती है।",
+  "meta": "vis=shaft floor, giant cutterhead starts to turn, dust",
+  "start": 10.223,
+  "end": 14.507,
+  "n": 5
+ },
+ {
+  "ch": 1,
+  "text": "थोड़ी दूर, ठाणे की खाड़ी में मछुआरों की नावें चल रही हैं।",
+  "meta": "vis=low over creek water, two fishing boats, mangroves",
+  "start": 14.948,
+  "end": 19.053,
+  "n": 6
+ },
+ {
+  "ch": 1,
+  "text": "ऊपर से देखो, तो यहाँ कुछ भी अलग नहीं दिखता।",
+  "meta": "vis=high aerial, calm water, skyline haze",
+  "start": 19.493,
+  "end": 23.918,
+  "n": 7
+ },
+ {
+  "ch": 1,
+  "text": "लेकिन इस पानी के नीचे, एक railway line बन रही है।",
+  "meta": "vis=camera sinks through the water, seabed cutaway reveals the tunnel line",
+  "start": 24.359,
+  "end": 27.843,
+  "n": 8
+ },
+ {
+  "ch": 1,
+  "text": "भारत की पहली bullet train, यहाँ समुद्र के नीचे से जाएगी।",
+  "meta": "vis=ghost bullet train glides through the cutaway; chip=INDIA'S FIRST UNDERSEA RAIL TUNNEL",
+  "start": 28.303,
+  "end": 31.467,
+  "n": 9
+ },
+ {
+  "ch": 1,
+  "text": "तो सवाल ये है।",
+  "meta": "vis=slow push toward the dark tunnel mouth",
+  "start": 31.987,
+  "end": 33.148,
+  "n": 10
+ },
+ {
+  "ch": 1,
+  "text": "समुद्र के नीचे सुरंग खोदो, तो पानी अंदर क्यों नहीं आता?",
+  "meta": "vis=water pressure arrows press down on the tunnel line",
+  "start": 33.449,
+  "end": 35.952,
+  "n": 11
+ },
+ {
+  "ch": 2,
+  "text": "ये सुरंग, मुंबई के बांद्रा कुर्ला Complex से शुरू होती है।",
+  "meta": "vis=MG map, start dot pulses at BKC; label=BKC",
+  "start": 37.172,
+  "end": 41.813,
+  "n": 12
+ },
+ {
+  "ch": 2,
+  "text": "और शिलफाटा तक जाती है।",
+  "meta": "vis=line draws east to Shilphata; label=SHILPHATA",
+  "start": 41.953,
+  "end": 44.134,
+  "n": 13
+ },
+ {
+  "ch": 2,
+  "text": "पूरी सुरंग, twenty-one kilometre लंबी है, और पूरी ज़मीन के अंदर है।",
+  "meta": "vis=line glows full length (number=21 km), then the map tilts into 3D terrain and the line drops below ground",
+  "start": 44.674,
+  "end": 50.936,
+  "n": 14
+ },
+ {
+  "ch": 2,
+  "text": "इसमें से करीब seven kilometre, ठाणे की खाड़ी के ठीक नीचे है।",
+  "meta": "vis=creek segment turns gold; number=7 km",
+  "start": 51.896,
+  "end": 53.717,
+  "n": 15
+ },
+ {
+  "ch": 2,
+  "text": "ज़्यादातर जगह, ये twenty-five से sixty-five metre गहरी है।",
+  "meta": "vis=side profile, depth band shaded; number=25-65 m",
+  "start": 54.237,
+  "end": 58.538,
+  "n": 16
+ },
+ {
+  "ch": 2,
+  "text": "पर पारसिक पहाड़ी के नीचे, ये one hundred fourteen metre तक चली जाती है।",
+  "meta": "vis=profile dips under the hill; number=114 m",
+  "start": 58.899,
+  "end": 63.36,
+  "n": 17
+ },
+ {
+  "ch": 2,
+  "text": "यानी क़ुतुब मीनार से भी, करीब डेढ़ गुना गहरी।",
+  "meta": "vis=Qutub Minar silhouette drops in beside the 114 m mark",
+  "start": 63.84,
+  "end": 67.865,
+  "n": 18
+ },
+ {
+  "ch": 2,
+  "text": "ये सुरंग, एक ही बड़ी गोल tube है।",
+  "meta": "vis=cross-section circle draws itself",
+  "start": 68.365,
+  "end": 70.628,
+  "n": 19
+ },
+ {
+  "ch": 2,
+  "text": "इसकी चौड़ाई, thirteen point one metre है।",
+  "meta": "vis=dimension line across the circle; number=13.1 m",
+  "start": 70.708,
+  "end": 72.91,
+  "n": 20
+ },
+ {
+  "ch": 2,
+  "text": "और इसी एक tube में, दोनों तरफ़ की trains चलेंगी।",
+  "meta": "vis=two tracks inside, two trains pass opposite ways",
+  "start": 73.371,
+  "end": 77.335,
+  "n": 21
+ },
+ {
+  "ch": 2,
+  "text": "अब सोचिए, समुद्र के नीचे इतनी बड़ी सुरंग, खोदी कैसे जाती है?",
+  "meta": "vis=camera pushes into the dark cross-section",
+  "start": 78.236,
+  "end": 82.321,
+  "n": 22
+ },
+ {
+  "ch": 3,
+  "text": "इसके लिए आई है, एक tunnel boring machine।",
+  "meta": "vis=TBM full side, slow dolly along it; chip=TUNNEL BORING MACHINE",
+  "start": 83.437,
+  "end": 84.698,
+  "n": 23
+ },
+ {
+  "ch": 3,
+  "text": "भारत के किसी railway project में, अब तक की सबसे बड़ी।",
+  "meta": "vis=low wide hero angle, work lights",
+  "start": 85.498,
+  "end": 89.4,
+  "n": 24
+ },
+ {
+  "ch": 3,
+  "text": "इसका आगे का घूमने वाला हिस्सा, cutterhead कहलाता है।",
+  "meta": "vis=front of cutterhead, a worker figure for scale; chip=CUTTERHEAD",
+  "start": 90.001,
+  "end": 93.423,
+  "n": 25
+ },
+ {
+  "ch": 3,
+  "text": "ये thirteen point six metre चौड़ा है।",
+  "meta": "vis=dimension line across the cutterhead face; number=13.6 m",
+  "start": 94.103,
+  "end": 97.325,
+  "n": 26
+ },
+ {
+  "ch": 3,
+  "text": "अकेले cutterhead का वज़न, three hundred fifty ton है।",
+  "meta": "vis=crane lowers the cutterhead into the shaft; number=350 t",
+  "start": 97.865,
+  "end": 100.987,
+  "n": 27
+ },
+ {
+  "ch": 3,
+  "text": "पूरी machine, करीब ninety-six metre लंबी है।",
+  "meta": "vis=pull back along the whole machine; number=96 m",
+  "start": 101.327,
+  "end": 105.49,
+  "n": 28
+ },
+ {
+  "ch": 3,
+  "text": "और इसका वज़न, करीब three thousand two hundred ton है।",
+  "meta": "vis=low angle under the steel shield; number=3,200 t",
+  "start": 105.71,
+  "end": 107.791,
+  "n": 29
+ },
+ {
+  "ch": 3,
+  "text": "सामने लगे steel के cutters, घूमते हुए मिट्टी और पत्थर काटते हैं।",
+  "meta": "vis=macro, disc cutters scraping rock",
+  "start": 108.271,
+  "end": 112.195,
+  "n": 30
+ },
+ {
+  "ch": 3,
+  "text": "पीछे लगे hydraulic jacks, machine को धीरे धीरे आगे धकेलते हैं।",
+  "meta": "vis=jacks extend, machine inches forward",
+  "start": 112.576,
+  "end": 118.121,
+  "n": 31
+ },
+ {
+  "ch": 3,
+  "text": "लेकिन यहाँ एक बड़ी problem है।",
+  "meta": "vis=lights dim on the machine",
+  "start": 118.542,
+  "end": 120.043,
+  "n": 32
+ },
+ {
+  "ch": 3,
+  "text": "समुद्र के नीचे की मिट्टी, गीली और नरम है।",
+  "meta": "vis=macro, soft wet clay at the face",
+  "start": 120.624,
+  "end": 124.848,
+  "n": 33
+ },
+ {
+  "ch": 3,
+  "text": "और उसके ऊपर, पूरे समुद्र का वज़न है।",
+  "meta": "vis=cutaway, water column arrows press down",
+  "start": 125.309,
+  "end": 127.491,
+  "n": 34
+ },
+ {
+  "ch": 3,
+  "text": "जैसे ही सामने की मिट्टी कटती है, वो अंदर गिरने लगती है।",
+  "meta": "vis=face starts to slump toward the machine; tag=illustrative",
+  "start": 128.192,
+  "end": 129.373,
+  "n": 35
+ },
+ {
+  "ch": 4,
+  "text": "इसलिए इस machine का असली कमाल, काटना नहीं, रोकना है।",
+  "meta": "vis=x-ray through the shield into the front chamber",
+  "start": 130.294,
+  "end": 133.235,
+  "n": 36
+ },
+ {
+  "ch": 4,
+  "text": "इसे mix shield machine कहते हैं।",
+  "meta": "vis=chamber outline glows; chip=MIXSHIELD",
+  "start": 133.836,
+  "end": 136.897,
+  "n": 37
+ },
+ {
+  "ch": 4,
+  "text": "Cutterhead के ठीक पीछे, एक बंद chamber होता है।",
+  "meta": "vis=chamber isolated, walls highlighted",
+  "start": 137.017,
+  "end": 140.198,
+  "n": 38
+ },
+ {
+  "ch": 4,
+  "text": "ये chamber, bentonite slurry से भरा रहता है।",
+  "meta": "vis=chamber fills with grey slurry",
+  "start": 140.719,
+  "end": 143.22,
+  "n": 39
+ },
+ {
+  "ch": 4,
+  "text": "Bentonite एक खास तरह की मिट्टी है।",
+  "meta": "vis=macro, fine clay powder in light",
+  "start": 143.76,
+  "end": 146.601,
+  "n": 40
+ },
+ {
+  "ch": 4,
+  "text": "पानी में मिलाओ, तो ये गाढ़ी, कीचड़ जैसी बन जाती है।",
+  "meta": "vis=powder swirls into a thick fluid",
+  "start": 146.781,
+  "end": 149.983,
+  "n": 41
+ },
+ {
+  "ch": 4,
+  "text": "इस slurry को, pressure से सामने की मिट्टी पर दबाया जाता है।",
+  "meta": "vis=pressure arrows push out from the chamber to the face",
+  "start": 150.463,
+  "end": 155.349,
+  "n": 42
+ },
+ {
+  "ch": 4,
+  "text": "बाहर से समुद्र, अंदर की तरफ़ धकेलता है।",
+  "meta": "vis=blue arrows push in from the seabed",
+  "start": 156.009,
+  "end": 157.471,
+  "n": 43
+ },
+ {
+  "ch": 4,
+  "text": "और अंदर से, slurry बाहर की तरफ़ धकेलती है।",
+  "meta": "vis=gold arrows push out and meet the blue",
+  "start": 157.952,
+  "end": 160.675,
+  "n": 44
+ },
+ {
+  "ch": 4,
+  "text": "जब दोनों बराबर हो जाते हैं, तो मिट्टी अपनी जगह रुकी रहती है।",
+  "meta": "vis=gauge needle settles in the centre; word gold=BALANCE",
+  "start": 161.195,
+  "end": 165.06,
+  "n": 45
+ },
+ {
+  "ch": 4,
+  "text": "ये pressure, एक air cushion से हर पल adjust होता है।",
+  "meta": "vis=air bubble above the slurry rises and falls",
+  "start": 165.58,
+  "end": 168.981,
+  "n": 46
+ },
+ {
+  "ch": 4,
+  "text": "कटी हुई मिट्टी, इसी slurry में मिलकर pipes से बाहर जाती है।",
+  "meta": "vis=pipes carry brown slurry back along the tunnel",
+  "start": 169.341,
+  "end": 173.103,
+  "n": 47
+ },
+ {
+  "ch": 4,
+  "text": "ऊपर एक plant, मिट्टी को अलग कर देता है।",
+  "meta": "vis=separation plant on the surface, spoil drops out",
+  "start": 173.563,
+  "end": 176.304,
+  "n": 48
+ },
+ {
+  "ch": 4,
+  "text": "और साफ़ slurry, फिर से अंदर भेज दी जाती है।",
+  "meta": "vis=loop arrow carries clean slurry back down",
+  "start": 176.744,
+  "end": 179.725,
+  "n": 49
+ },
+ {
+  "ch": 4,
+  "text": "यानी ये machine, अपने आगे पानी जैसी एक दीवार लेकर चलती है।",
+  "meta": "vis=pull back, glowing slurry face ahead of the machine; chip=A WALL OF LIQUID",
+  "start": 180.205,
+  "end": 183.987,
+  "n": 50
+ },
+ {
+  "ch": 5,
+  "text": "पर machine के पीछे, सुरंग की दीवार कहाँ से आती है?",
+  "meta": "vis=inside the TBM tail, erector arm in silhouette",
+  "start": 184.818,
+  "end": 187.98,
+  "n": 51
+ },
+ {
+  "ch": 5,
+  "text": "Machine के अंदर एक robotic arm है, जिसे erector कहते हैं।",
+  "meta": "vis=erector arm rotates; chip=ERECTOR",
+  "start": 188.6,
+  "end": 192.663,
+  "n": 52
+ },
+ {
+  "ch": 5,
+  "text": "ये concrete के बड़े, मुड़े हुए टुकड़े उठाता है।",
+  "meta": "vis=arm lifts a curved piece from the feeder",
+  "start": 192.783,
+  "end": 195.165,
+  "n": 53
+ },
+ {
+  "ch": 5,
+  "text": "इन टुकड़ों को segments कहते हैं।",
+  "meta": "vis=one segment turns slowly in light; chip=SEGMENT",
+  "start": 195.565,
+  "end": 198.827,
+  "n": 54
+ },
+ {
+  "ch": 5,
+  "text": "हर segment, two metre चौड़ा और half metre मोटा है।",
+  "meta": "vis=dimension lines on the segment; number=2 m × 0.5 m",
+  "start": 199.467,
+  "end": 201.869,
+  "n": 55
+ },
+ {
+  "ch": 5,
+  "text": "Nine segments और एक key segment, मिलकर एक ring बनाते हैं।",
+  "meta": "vis=ring assembles piece by piece; number=9 + 1",
+  "start": 202.449,
+  "end": 206.372,
+  "n": 56
+ },
+ {
+  "ch": 5,
+  "text": "Key segment सबसे आख़िर में लगता है, और पूरे ring को lock कर देता है।",
+  "meta": "vis=key segment slides in, ring locks with a flash",
+  "start": 206.752,
+  "end": 211.574,
+  "n": 57
+ },
+ {
+  "ch": 5,
+  "text": "फिर jacks, इस नए ring पर ज़ोर लगाते हैं।",
+  "meta": "vis=jack shoes press on the new ring",
+  "start": 211.934,
+  "end": 214.435,
+  "n": 58
+ },
+ {
+  "ch": 5,
+  "text": "और machine, एक ring आगे बढ़ जाती है।",
+  "meta": "vis=machine advances one ring length",
+  "start": 214.835,
+  "end": 218.617,
+  "n": 59
+ },
+ {
+  "ch": 5,
+  "text": "Ring के पीछे की खाली जगह में, grout भरा जाता है।",
+  "meta": "vis=grout injects into the gap behind the ring",
+  "start": 219.297,
+  "end": 220.798,
+  "n": 60
+ },
+ {
+  "ch": 5,
+  "text": "ताकि बाहर का पानी, कहीं से अंदर ना आ सके।",
+  "meta": "vis=water beads stop at the grout line",
+  "start": 221.478,
+  "end": 223.979,
+  "n": 61
+ },
+ {
+  "ch": 5,
+  "text": "और ये काम, हज़ारों बार होता है।",
+  "meta": "vis=time-lapse, rings stack into a long tube",
+  "start": 224.659,
+  "end": 227.02,
+  "n": 62
+ },
+ {
+  "ch": 5,
+  "text": "इस सुरंग के लिए, करीब seventy-seven thousand segments बन रहे हैं।",
+  "meta": "vis=casting yard, endless rows of segments; number=77,000",
+  "start": 227.641,
+  "end": 233.103,
+  "n": 63
+ },
+ {
+  "ch": 6,
+  "text": "पर क्या पूरी सुरंग, machine से ही बन रही है?",
+  "meta": "vis=dark rough rock face, hard light",
+  "start": 233.903,
+  "end": 236.545,
+  "n": 64
+ },
+ {
+  "ch": 6,
+  "text": "घनसोली से शिलफाटा के बीच, ज़मीन में पक्की चट्टान है।",
+  "meta": "vis=MG map, Ghansoli to Shilphata segment lights up",
+  "start": 237.366,
+  "end": 241.669,
+  "n": 65
+ },
+ {
+  "ch": 6,
+  "text": "वहाँ करीब five kilometre सुरंग, blasting से बनाई गई।",
+  "meta": "vis=rock tunnel, chip on the wall; chip=NATM; number=5 km",
+  "start": 242.189,
+  "end": 245.352,
+  "n": 66
+ },
+ {
+  "ch": 6,
+  "text": "पहले चट्टान में, गहरे छेद किए जाते हैं।",
+  "meta": "vis=drill rig bores holes into the face",
+  "start": 245.812,
+  "end": 248.514,
+  "n": 67
+ },
+ {
+  "ch": 6,
+  "text": "फिर उनमें explosives भरकर, controlled blast किया जाता है।",
+  "meta": "vis=charges placed, blast flash and dust",
+  "start": 248.875,
+  "end": 253.058,
+  "n": 68
+ },
+ {
+  "ch": 6,
+  "text": "हर blast के बाद, दीवार पर तुरंत concrete spray होता है।",
+  "meta": "vis=shotcrete spraying the fresh rock",
+  "start": 253.478,
+  "end": 257.039,
+  "n": 69
+ },
+ {
+  "ch": 6,
+  "text": "और steel के लंबे bolts, चट्टान में लगा दिए जाते हैं।",
+  "meta": "vis=rock bolts driven into the wall",
+  "start": 257.559,
+  "end": 260.82,
+  "n": 70
+ },
+ {
+  "ch": 6,
+  "text": "काम तेज़ करने के लिए, बीच में एक side tunnel भी बनाई गई।",
+  "meta": "vis=side tunnel joins the main one; chip=ADIT",
+  "start": 261.26,
+  "end": 266.042,
+  "n": 71
+ },
+ {
+  "ch": 6,
+  "text": "इससे एक साथ, कई जगह से खुदाई हो सकी।",
+  "meta": "vis=three working faces lit at once",
+  "start": 266.462,
+  "end": 268.983,
+  "n": 72
+ },
+ {
+  "ch": 6,
+  "text": "और September, two thousand twenty-five में, आख़िरी blast हुआ।",
+  "meta": "vis=final blast, dust fills the frame; number=20 SEP 2025",
+  "start": 269.363,
+  "end": 273.444,
+  "n": 73
+ },
+ {
+  "ch": 6,
+  "text": "और ये पूरा हिस्सा, आर पार जुड़ गया।",
+  "meta": "vis=breakthrough, light pours through the rock; number=4.88 km",
+  "start": 274.084,
+  "end": 275.025,
+  "n": 74
+ },
+ {
+  "ch": 7,
+  "text": "अब वापस चलते हैं, ठाणे की खाड़ी पर।",
+  "meta": "vis=sunset over the creek, boats heading home",
+  "start": 275.905,
+  "end": 280.188,
+  "n": 75
+ },
+ {
+  "ch": 7,
+  "text": "ऊपर नावें आज भी, वैसे ही चल रही हैं।",
+  "meta": "vis=close on a boat's wake",
+  "start": 280.768,
+  "end": 282.83,
+  "n": 76
+ },
+ {
+  "ch": 7,
+  "text": "और नीचे, दो machines धीरे धीरे आगे बढ़ रही हैं।",
+  "meta": "vis=cutaway, two TBMs in the seabed, one from each side",
+  "start": 283.01,
+  "end": 285.212,
+  "n": 77
+ },
+ {
+  "ch": 7,
+  "text": "एक विक्रोली से बांद्रा की तरफ़।",
+  "meta": "vis=MG map, first arrow; labels=VIKHROLI, BKC",
+  "start": 285.652,
+  "end": 287.633,
+  "n": 78
+ },
+ {
+  "ch": 7,
+  "text": "और दूसरी सावली से, समुद्र के नीचे होते हुए विक्रोली की तरफ़।",
+  "meta": "vis=second arrow runs under the creek; label=SAWLI",
+  "start": 287.954,
+  "end": 292.517,
+  "n": 79
+ },
+ {
+  "ch": 7,
+  "text": "जब ये रास्ता पूरा होगा, तो यहाँ bullet train दौड़ेगी।",
+  "meta": "vis=bullet train streaks through the finished ring tunnel",
+  "start": 293.098,
+  "end": 296.868,
+  "n": 80
+ },
+ {
+  "ch": 7,
+  "text": "अपने रास्ते पर, करीब three hundred twenty kilometre per hour तक की speed से।",
+  "meta": "vis=speed lines along the coaches; number=320 km/h",
+  "start": 297.289,
+  "end": 302.262,
+  "n": 81
+ },
+ {
+  "ch": 7,
+  "text": "और समुद्र के नीचे से गुज़रते हुए, शायद आपको पता भी नहीं चलेगा।",
+  "meta": "vis=inside the coach, calm passenger, dark window",
+  "start": 302.703,
+  "end": 307.095,
+  "n": 82
+ },
+ {
+  "ch": 7,
+  "text": "कि आपके ठीक ऊपर, पूरा समुद्र है।",
+  "meta": "vis=camera rises through rings, seabed, water, up to the boats; end title",
+  "start": 307.496,
+  "end": 309.842,
+  "n": 83
+ }
+]

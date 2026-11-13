@@ -1,0 +1,18 @@
+
+CURRENT PATH (v1)  (lens 28.0 mm, vertical FOV 46.4 deg)
+ t s |   camera x,y,z     | pitch | yaw  | speed to next m/s | horizon in frame
+ 0.0 |    -96,  -150,  2.8 |  -0.7 |  38.0 |              17.9 | yes
+ 4.5 |    -40,   -92,  3.6 |  -1.4 |  34.8 |              12.7 | yes
+ 5.0 |    -36,   -96,  6.5 |  -2.7 |  26.0 |              55.7 | yes
+ 7.6 |    -10,  -210, 92.0 | -18.8 |   2.1 |              89.3 | yes
+ 8.4 |      0,  -140, 82.0 | -45.7 |   0.0 |              79.2 | NO
+ 9.6 |      0,   -78, 10.0 | -20.2 |   0.0 |              36.1 | yes
+10.3 |      0,   -70,-14.0 | -12.9 |   0.0 |                   | yes  BELOW WATER
+
+REDESIGNED PATH (v2)  (lens 28.0 mm, vertical FOV 46.4 deg)
+ t s |   camera x,y,z     | pitch | yaw  | speed to next m/s | horizon in frame
+ 0.0 |   -130,  -270,  4.0 |   1.6 |   6.9 |              21.6 | yes
+ 4.5 |    -75,  -190,  5.0 |   1.9 |   4.9 |              12.0 | yes
+ 8.0 |    -45,  -175, 30.0 |  -0.6 |   2.6 |              23.8 | yes
+11.5 |    -10,  -105,  1.6 |   1.5 |   0.6 |              10.8 | yes
+12.5 |     -6,   -95,  1.2 |   1.5 |   0.4 |                   | yes

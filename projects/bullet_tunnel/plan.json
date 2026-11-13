@@ -1,0 +1,101 @@
+{
+ "topic": "Mumbai bullet train undersea tunnel",
+ "minutes": 5.5,
+ "wpm": 146,
+ "words": 803,
+ "chapters": [
+  {
+   "title": "Hook",
+   "shot": "room",
+   "words": 64,
+   "n": 1,
+   "seconds": 26.3,
+   "beats": 5
+  },
+  {
+   "title": "Open it",
+   "shot": "explode",
+   "words": 48,
+   "n": 2,
+   "seconds": 19.7,
+   "beats": 3
+  },
+  {
+   "title": "System 1",
+   "shot": "focus",
+   "words": 161,
+   "n": 3,
+   "seconds": 66.2,
+   "beats": 12
+  },
+  {
+   "title": "System 2",
+   "shot": "focus",
+   "words": 161,
+   "n": 4,
+   "seconds": 66.2,
+   "beats": 12
+  },
+  {
+   "title": "System 3",
+   "shot": "focus",
+   "words": 161,
+   "n": 5,
+   "seconds": 66.2,
+   "beats": 12
+  },
+  {
+   "title": "Dive",
+   "shot": "dive",
+   "words": 80,
+   "n": 6,
+   "seconds": 32.9,
+   "beats": 6
+  },
+  {
+   "title": "Connect",
+   "shot": "return",
+   "words": 80,
+   "n": 7,
+   "seconds": 32.9,
+   "beats": 6
+  },
+  {
+   "title": "Close",
+   "shot": "room",
+   "words": 48,
+   "n": 8,
+   "seconds": 19.7,
+   "beats": 3
+  }
+ ],
+ "enginex_calls": {
+  "voice_speak_whole_video": 1,
+  "voice_transcribe_whole_video": 1,
+  "uploads_create_url": 10,
+  "blender_preview": 8,
+  "blender_final": 8,
+  "review_montage": 8,
+  "review_sign_batched": 2,
+  "motion_graphic_render_silent": 8,
+  "concat_audio_replace_sprite_sign": 4,
+  "sound_voice_duck_patch_reserve": 6,
+  "retake_reserve_20pct": 12
+ },
+ "enginex_calls_total": 68,
+ "budget_cap": 500,
+ "voice": {
+  "voice": "owen",
+  "lineGapMs": 450,
+  "paragraphGapMs": 900,
+  "continuity": true,
+  "format": "wav"
+ },
+ "render": {
+  "res": [
+   1920,
+   1080
+  ],
+  "fps": 30
+ }
+}

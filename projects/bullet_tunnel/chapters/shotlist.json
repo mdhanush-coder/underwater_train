@@ -1,0 +1,47 @@
+{
+ "chapters": [
+  {
+   "chapter": 1,
+   "title": "Hook",
+   "shot": "shaft",
+   "parts": []
+  },
+  {
+   "chapter": 2,
+   "title": "The route",
+   "shot": "map",
+   "parts": []
+  },
+  {
+   "chapter": 3,
+   "title": "The machine",
+   "shot": "tbm",
+   "parts": []
+  },
+  {
+   "chapter": 4,
+   "title": "Holding back the sea",
+   "shot": "slurry",
+   "parts": []
+  },
+  {
+   "chapter": 5,
+   "title": "Building the tube",
+   "shot": "rings",
+   "parts": []
+  },
+  {
+   "chapter": 6,
+   "title": "Where they blast",
+   "shot": "natm",
+   "parts": []
+  },
+  {
+   "chapter": 7,
+   "title": "Back to the creek",
+   "shot": "return",
+   "parts": []
+  }
+ ],
+ "parts": []
+}

@@ -1,0 +1,93 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@800;900&family=Rajdhani:wght@600;700&family=JetBrains+Mono:wght@500;600&family=Inter:ital,wght@0,500;0,700;0,800;1,800&display=block" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+body{margin:0;background:#000}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#111;color:#FFF8E6;font-family:'Rajdhani','Hind',sans-serif}
+.clip{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover}
+.mgpage{position:absolute;left:0;top:0;width:1920px;height:1080px}
+#topscrim{position:absolute;left:0;top:0;width:1920px;height:150px;background:linear-gradient(180deg,rgba(8,8,10,.55),rgba(8,8,10,0))}
+#botscrim{position:absolute;left:0;bottom:0;width:1100px;height:420px;background:radial-gradient(120% 100% at 0% 100%,rgba(8,8,10,.55) 0%,rgba(8,8,10,0) 70%)}
+#fx{position:absolute;left:0;top:0;width:1920px;height:1080px;pointer-events:none}
+.hdr,.topic{position:absolute;top:44px;font:600 24px 'JetBrains Mono','Hind',monospace;letter-spacing:.1em;text-transform:uppercase;text-shadow:0 2px 12px rgba(0,0,0,.8)}
+.hdr{left:72px;display:flex;align-items:center;gap:16px}
+.hdr i{display:block;width:52px;height:5px;border-radius:3px;background:#F5B700}
+.topic{right:72px;opacity:.85}
+.b{position:absolute;visibility:hidden}
+.tagbox{display:inline-block;font:600 22px 'JetBrains Mono','Hind',monospace;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border:1.5px solid rgba(245,183,0,.85);border-radius:4px;background:rgba(10,10,12,.35);margin-bottom:12px;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+.hl{font:800 52px/1.08 'Unbounded','Hind',sans-serif;letter-spacing:.005em;text-transform:uppercase;text-shadow:0 3px 22px rgba(0,0,0,.7);white-space:nowrap}
+.hl .g{color:#F5B700}
+.u{text-transform:none !important}
+.hl .box{background:#F5B700;color:#121212;padding:0 12px;text-shadow:none;display:inline-block;margin:2px 0}
+.it{font:800 italic 46px/1.12 'Inter',sans-serif;letter-spacing:.005em;text-transform:uppercase;text-shadow:0 3px 22px rgba(0,0,0,.7);white-space:nowrap}
+.bar{width:110px;height:5px;border-radius:3px;background:#F5B700;margin-top:16px}
+.sub{display:flex;align-items:center;gap:10px;margin-top:12px;font:600 28px 'Rajdhani','Hind',sans-serif;letter-spacing:.08em;text-transform:uppercase;text-shadow:0 2px 14px rgba(0,0,0,.75)}
+.date{display:flex;align-items:center;gap:16px}
+.numb .lab{display:inline-block;font:600 24px 'JetBrains Mono','Hind',monospace;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border:1.5px solid rgba(255,248,230,.55);border-radius:4px;background:rgba(10,10,12,.4)}
+.numb .n{font:900 104px/1 'Unbounded','Hind',sans-serif;color:#F5B700;font-variant-numeric:tabular-nums;text-shadow:0 4px 26px rgba(0,0,0,.6);margin:10px 0}
+.numb .n small{font-size:58px;color:#FFF8E6;margin-left:8px}
+.card{position:absolute;padding:12px 18px;box-sizing:border-box;white-space:nowrap;border:2px solid #F5B700;border-radius:14px;background:rgba(10,10,12,.72);box-shadow:0 8px 28px rgba(0,0,0,.45)}
+.card .t{font:700 26px/1.15 'Inter',sans-serif;text-transform:uppercase}
+.card .t b{color:#F5B700}
+.card .d{font:500 16px/1.35 'JetBrains Mono',monospace;color:#E6E1D6;margin-top:6px;letter-spacing:.06em;text-transform:uppercase}
+svg#ld{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:visible}
+svg#ld polyline{fill:none;stroke:rgba(255,255,255,.9);stroke-width:2}
+svg#ld circle.dot{fill:#F5B700}
+svg#ld circle.ring{fill:none;stroke:#F5B700;stroke-width:2}
+.pill{display:flex;align-items:center;gap:12px;font:600 22px 'JetBrains Mono','Hind',monospace;letter-spacing:.1em;text-transform:uppercase;padding:8px 16px;border:1.5px solid rgba(127,227,255,.8);border-radius:10px;background:rgba(6,30,40,.55)}
+</style></head><body>
+<div id="root" data-composition-id="ch3" data-start="0" data-duration="46.85" data-width="1920" data-height="1080">
+<video class="clip" src="assets/ch3_tbm.mp4" data-start="0.000" data-duration="46.850" data-media-start="0.000" muted playsinline></video><div id="topscrim"></div><div id="botscrim"></div><canvas id="fx" width="1920" height="1080"></canvas>
+<svg id="ld" viewBox="0 0 1920 1080"><g id="ld1" style="opacity:0"><polyline points=""/><circle class="dot" r="5"/><circle class="ring" r="11"/></g><g id="ld6" style="opacity:0"><polyline points=""/><circle class="dot" r="5"/><circle class="ring" r="11"/></g></svg>
+<div class="hdr" id="hdr"><i></i><span>03 &mdash; The machine</span></div><div class="topic" id="topic">Mumbai &rarr; Ahmedabad high-speed rail</div>
+<div class="b" id="b0" style="left:72px;top:140px"><div class="r"><span class="tagbox">The machine</span></div><div class="r hl">Tunnel boring <span class="g">machine</span></div><div class="r sub"><span>Largest ever on an Indian rail project</span></div><div class="r bar"></div></div><div class="b co" id="b1"><div class="card" style="left:1240px;top:280px"><div class="t"><b>Cutterhead</b></div><div class="d">The rotating front<br>of the machine</div></div></div><div class="b" id="b2" style="right:72px;top:300px;text-align:right"><div class="r numb"><span class="lab">Cutterhead diameter</span></div><div class="r numb"><div class="n"><span class="cnt" data-to="13.6">0</span><small><span class="u">m</span></small></div></div><div class="r numb"><span class="lab">Across the face</span></div></div><div class="b" id="b3" style="right:72px;top:300px;text-align:right"><div class="r numb"><span class="lab">Cutterhead weight</span></div><div class="r numb"><div class="n"><span class="cnt" data-to="350">0</span><small><span class="u">t</span></small></div></div><div class="r numb"><span class="lab">The cutterhead alone</span></div></div><div class="b" id="b4" style="right:72px;top:300px;text-align:right"><div class="r numb"><span class="lab">Whole machine</span></div><div class="r numb"><div class="n"><span class="cnt" data-to="96">0</span><small><span class="u">m</span></small></div></div><div class="r numb"><span class="lab">Long</span></div></div><div class="b" id="b5" style="left:72px;top:300px"><div class="r numb"><span class="lab">Total weight</span></div><div class="r numb"><div class="n"><span class="cnt" data-to="3200">0</span><small><span class="u">t</span></small></div></div><div class="r numb"><span class="lab">About</span></div></div><div class="b co" id="b6"><div class="card" style="left:300px;top:250px"><div class="t"><b>84</b> disc cutters</div><div class="d">Steel discs roll and<br>crush soil and rock</div></div></div><div class="b" id="b7" style="right:72px;top:140px;text-align:right"><div class="r"><span class="tagbox">Thrust</span></div><div class="r hl">Hydraulic <span class="g">jacks</span></div><div class="r hl">push it forward</div><div class="r bar"></div></div><div class="b" id="b8" style="right:72px;top:760px;text-align:right"><div class="r it">But here,</div><div class="r it">there is a <span style="color:#F5B700">problem.</span></div><div class="r bar"></div></div><div class="b" id="b9" style="right:72px;top:140px;text-align:right"><div class="r hl">Seabed soil is</div><div class="r hl"><span class="box">wet and soft</span></div><div class="r bar"></div></div><div class="b" id="b10" style="right:72px;top:140px;text-align:right"><div class="r hl">And above it,</div><div class="r hl">the weight of <span class="g">the sea</span></div><div class="r bar"></div></div><div class="b" id="b11" style="right:72px;top:760px;text-align:right"><div class="r hl">The face</div><div class="r hl"><span class="box">starts to collapse</span></div><div class="r bar"></div></div><div class="b" id="b12" style="right:72px;top:100px;text-align:right"><div class="r pill"><span>Illustrative</span></div></div>
+</div>
+<script>
+window.__hf = window.__hf || {}; window.__hf.buildReady = window.__hf.buildReady || {};
+window.__hf.buildReady.fonts = Promise.all([document.fonts.load('800 52px "Unbounded"'), document.fonts.load('900 104px "Unbounded"'), document.fonts.load('600 28px "Rajdhani"'),
+  document.fonts.load('600 24px "JetBrains Mono"'), document.fonts.load('700 26px "Inter"'), document.fonts.load('italic 800 46px "Inter"')]);
+const BEATS = [{"i": 0, "k": "hl", "t": 0.3, "z": 6.2, "sub_t": 2.1, "anchor": null, "side": "right"}, {"i": 1, "k": "card", "t": 6.6, "z": 10.2, "sub_t": null, "anchor": [0.335, 0.51], "side": "right"}, {"i": 2, "k": "num", "t": 10.7, "z": 14.1, "sub_t": null, "anchor": null, "side": "right"}, {"i": 3, "k": "num", "t": 14.4, "z": 17.7, "sub_t": null, "anchor": null, "side": "right"}, {"i": 4, "k": "num", "t": 17.9, "z": 22.1, "sub_t": null, "anchor": null, "side": "right"}, {"i": 5, "k": "num", "t": 22.3, "z": 24.6, "sub_t": null, "anchor": null, "side": "right"}, {"i": 6, "k": "card", "t": 24.9, "z": 28.9, "sub_t": null, "anchor": [0.778, 0.452], "side": "left"}, {"i": 7, "k": "hl", "t": 29.2, "z": 34.8, "sub_t": null, "anchor": null, "side": "right"}, {"i": 8, "k": "hl", "t": 35.1, "z": 36.9, "sub_t": null, "anchor": null, "side": "right"}, {"i": 9, "k": "hl", "t": 37.2, "z": 41.6, "sub_t": null, "anchor": null, "side": "right"}, {"i": 10, "k": "hl", "t": 41.9, "z": 44.4, "sub_t": null, "anchor": null, "side": "right"}, {"i": 11, "k": "hl", "t": 44.7, "z": 46.85, "sub_t": null, "anchor": null, "side": "right"}, {"i": 12, "k": "pill", "t": 44.8, "z": 46.85, "sub_t": null, "anchor": null, "side": "right"}], PAGES = [];
+const tl = gsap.timeline({paused: true, onUpdate: () => { drawFx(tl.time()); drawLeaders(); if (window.pageDraw) window.pageDraw(tl.time()); }});
+const prog = {};
+function drawLeaders() {
+  BEATS.filter(b => b.k === 'card').forEach(b => {
+    const el = document.getElementById('b' + b.i), g = document.getElementById('ld' + b.i), card = el.querySelector('.card');
+    const vis = getComputedStyle(el).visibility !== 'hidden' && parseFloat(getComputedStyle(el).opacity) > 0.01;
+    const cw = card.offsetWidth || 300, ch = card.offsetHeight || 80, cx = parseFloat(card.style.left), cy = parseFloat(card.style.top);
+    const left = b.side === 'right';                       // card on the right: leader leaves its left edge
+    const sx = left ? cx : cx + cw, sy = cy + ch / 2, ex = left ? sx - 50 : sx + 50;
+    const X = b.anchor[0] * 1920, Y = b.anchor[1] * 1080, p = prog[b.i] || 0;
+    g.querySelector('polyline').setAttribute('points', [[sx, sy], [ex, sy], [ex + (X - ex) * p, sy + (Y - sy) * p]].map(q => q.join(',')).join(' '));
+    g.querySelectorAll('circle').forEach(c => { c.setAttribute('cx', X); c.setAttribute('cy', Y); c.style.opacity = p > 0.97 ? 1 : 0; });
+    g.style.opacity = vis ? getComputedStyle(el).opacity : 0;
+  });
+}
+const fx = document.getElementById('fx').getContext('2d');
+const BK = Array.from({length: 18}, () => ({x: Math.random() * 1920, y: Math.random() * 1080 * 0.7, r: 6 + Math.random() * 20, a: 0.02 + Math.random() * 0.045,
+  vx: (Math.random() - 0.5) * 6, vy: -2 - Math.random() * 5, ph: Math.random() * 6.28}));
+function drawFx(t) { fx.clearRect(0, 0, 1920, 1080); BK.forEach(b => { const x = (b.x + b.vx * t + 1920) % 1920, y = (b.y + b.vy * t + 1080) % 1080, a = b.a * (0.75 + 0.25 * Math.sin(b.ph + t * 0.6));
+  const g = fx.createRadialGradient(x, y, 0, x, y, b.r); g.addColorStop(0, `rgba(255,170,60,${a})`); g.addColorStop(1, 'rgba(255,170,60,0)'); fx.fillStyle = g; fx.beginPath(); fx.arc(x, y, b.r, 0, 6.2832); fx.fill(); }); }
+gsap.set(['#hdr', '#topic'], {autoAlpha: 0});
+tl.fromTo(['#hdr', '#topic'], {autoAlpha: 0, y: -12}, {autoAlpha: 1, y: 0, duration: 0.6, ease: 'power3.out', stagger: 0.1}, 0.2);
+PAGES.forEach(p => { const el = '#pg' + p.j; tl.set(el, {visibility: 'visible'}, p.t); tl.fromTo(el, {autoAlpha: 0}, {autoAlpha: 1, duration: 0.8, ease: 'power1.inOut'}, p.t);
+  tl.to(el, {autoAlpha: 0, duration: 0.8, ease: 'power1.inOut'}, p.z - 0.8); });
+BEATS.forEach(b => {
+  const el = '#b' + b.i; tl.set(el, {visibility: 'visible'}, b.t);
+  if (b.k === 'card') {
+    tl.fromTo(el + ' .card', {autoAlpha: 0, x: 20}, {autoAlpha: 1, x: 0, duration: 0.5, ease: 'power3.out'}, b.t);
+    const o = {p: 0}; tl.to(o, {p: 1, duration: 0.55, ease: 'power2.out', onUpdate: () => { prog[b.i] = o.p; }}, b.t + 0.25);
+  } else {
+    const rs = gsap.utils.toArray(el + ' .r');
+    const late = b.sub_t ? rs.filter(r => r.classList.contains('sub')) : [];
+    const early = rs.filter(r => !late.includes(r));
+    tl.fromTo(early, {autoAlpha: 0, y: 20}, {autoAlpha: 1, y: 0, duration: 0.5, ease: 'power3.out', stagger: 0.1}, b.t + 0.05);
+    if (late.length) { gsap.set(late, {autoAlpha: 0}); tl.fromTo(late, {autoAlpha: 0, y: 20}, {autoAlpha: 1, y: 0, duration: 0.5, ease: 'power3.out'}, b.sub_t); }
+    document.querySelectorAll(el + ' .cnt').forEach(c => { const o = {v: 0}, to = parseFloat(c.dataset.to);
+      tl.to(o, {v: to, duration: 2.6, ease: 'power2.inOut', onUpdate: () => { c.textContent = (to % 1 ? o.v.toFixed(1) : Math.round(o.v).toLocaleString('en-IN')); }}, b.t + 0.3); });
+  }
+  tl.to(el, {autoAlpha: 0, duration: 0.4, ease: 'power2.in'}, b.z - 0.4);
+});
+
+drawFx(0); drawLeaders();
+window.__timelines = {['ch3']: tl};
+</script></body></html>
